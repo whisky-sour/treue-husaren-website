@@ -5,8 +5,31 @@
     "contact": "Contact"
   },
   "Home": {
-    "title": "Carnival Club Example – Carnival in Musterstadt",
-    "headline": "Welcome to Carnival Club Example",
-    "intro": "We celebrate carnival in Musterstadt with gala sessions, parades and kids' carnival."
+    "title": "Treue Husaren Fürth e.V.",
+    "subtitle": "Carnival with passion in Fürth and surroundings",
+    "text": "We organise gala sessions, kids carnival, parades and many more events around the fifth season.",
+    "nextEventsTitle": "Upcoming events",
+    "ctaTitle": "Join Treue Husaren",
+    "ctaText": "You want to be on stage, help with organisation or support the tech team? Everyone is welcome.",
+    "ctaButton": "Become a member"
+  },
+  "Verein": {
+    "title": "About our club",
+    "intro": "Treue Husaren Fürth is a traditional carnival club that has been shaping the fifth season in Fürth and the surrounding area for many years.",
+    "groupsTitle": "Our groups",
+    "groupsDescription": "Whether dancer, organiser or tech nerd – everyone can find the right group with us.",
+    "groupGuard": "Guard & show dance",
+    "groupGuardDesc": "Our dance groups bring both modern and traditional performances to the stage.",
+    "groupYouth": "Kids & youth group",
+    "groupYouthDesc": "This is where the youngest members take their first steps on stage – playful and full of fun.",
+    "groupElferrat": "Committee & hosting",
+    "groupElferratDesc": "The faces on stage: hosting, speeches and the typical Treue Husaren humour.",
+    "groupTech": "Tech & music",
+    "groupTechDesc": "Sound, light and music – our tech team ensures that everything works perfectly on and off stage.",
+    "boardTitle": "Board",
+    "boardDescription": "The board of Treue Husaren Fürth e.V. coordinates club life and represents the club externally.",
+    "ctaTitle": "Join Treue Husaren",
+    "ctaText": "You want to become part of Treue Husaren – as a dancer, in the tech team or organisation?",
+    "ctaButton": "Become a member"
   }
 }

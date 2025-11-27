@@ -5,11 +5,31 @@
     "contact": "Kontakt"
   },
   "Home": {
-    "title": "Faschingsverein Example e.V. – Fasching in Musterstadt",
-    "headline": "Willkommen beim Faschingsverein Example e.V.",
-    "intro": "Wir feiern Fasching in Musterstadt mit Prunksitzungen, Umzügen und Kinderfasching."
+    "title": "Treue Husaren Fürth e.V.",
+    "subtitle": "Fasching mit Herz in Fürth und Umgebung",
+    "text": "Wir organisieren Prunksitzungen, Kinderfasching, Umzüge und viele weitere Veranstaltungen rund um die fünfte Jahreszeit.",
+    "nextEventsTitle": "Nächste Veranstaltungen",
+    "ctaTitle": "Mach mit bei den Treuen Husaren",
+    "ctaText": "Du möchtest auf der Bühne stehen, im Hintergrund organisieren oder in der Technik helfen? Bei uns ist jede und jeder willkommen.",
+    "ctaButton": "Mitglied werden"
   },
   "Verein": {
-    "headline": "Über unseren Verein"
+    "title": "Über unseren Verein",
+    "intro": "Die Treuen Husaren Fürth sind ein traditionsreicher Faschingsverein, der seit vielen Jahren die fünfte Jahreszeit in Fürth und Umgebung mitgestaltet.",
+    "groupsTitle": "Unsere Gruppen",
+    "groupsDescription": "Ob Tänzerin, Tänzer, Organisationstalent oder Technik-Nerd – bei uns findet jede und jeder die passende Gruppe.",
+    "groupGuard": "Garde & Showtanz",
+    "groupGuardDesc": "Unsere Garden sorgen mit modernen und traditionellen Tänzen für Stimmung auf der Bühne.",
+    "groupYouth": "Kinder- & Jugendgruppe",
+    "groupYouthDesc": "Hier machen die Kleinsten ihre ersten Schritte auf die Bühne – spielerisch und mit viel Spaß.",
+    "groupElferrat": "Elferrat & Moderation",
+    "groupElferratDesc": "Die Gesichter auf der Bühne: Moderation, Büttenreden und der berühmte Humor der Treuen Husaren.",
+    "groupTech": "Technik & Musik",
+    "groupTechDesc": "Ton, Licht, Musik – unser Technikteam sorgt dafür, dass auf und vor der Bühne alles passt.",
+    "boardTitle": "Vorstand",
+    "boardDescription": "Der Vorstand der Treuen Husaren Fürth e.V. koordiniert das Vereinsleben und vertritt den Verein nach außen.",
+    "ctaTitle": "Mach mit bei den Treuen Husaren",
+    "ctaText": "Du möchtest Teil der Treuen Husaren werden – als Tänzerin, Tänzer, in der Technik oder Organisation?",
+    "ctaButton": "Mitglied werden"
   }
 }
