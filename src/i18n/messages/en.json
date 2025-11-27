@@ -1,0 +1,12 @@
+{
+  "Nav": {
+    "home": "Home",
+    "about": "Club",
+    "contact": "Contact"
+  },
+  "Home": {
+    "title": "Carnival Club Example – Carnival in Musterstadt",
+    "headline": "Welcome to Carnival Club Example",
+    "intro": "We celebrate carnival in Musterstadt with gala sessions, parades and kids' carnival."
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "Nav": {
+    "home": "Start",
+    "about": "Verein",
+    "contact": "Kontakt"
+  },
+  "Home": {
+    "title": "Faschingsverein Example e.V. – Fasching in Musterstadt",
+    "headline": "Willkommen beim Faschingsverein Example e.V.",
+    "intro": "Wir feiern Fasching in Musterstadt mit Prunksitzungen, Umzügen und Kinderfasching."
+  },
+  "Verein": {
+    "headline": "Über unseren Verein"
+  }
+}

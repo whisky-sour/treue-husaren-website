@@ -1,5 +1,5 @@
-// app/verein/page.tsx
 import type { Metadata } from "next";
+import { getTranslations } from "next-intl/server";
 
 export const metadata: Metadata = {
   title: "Über uns | Faschingsverein Example e.V. Musterstadt",
@@ -7,10 +7,12 @@ export const metadata: Metadata = {
     "Lerne den Faschingsverein Example e.V. aus Musterstadt kennen: Geschichte, Vorstand, Garden und Gruppen.",
 };
 
-export default function VereinPage() {
+export default async function VereinPage() {
+  const t = await getTranslations("Verein");
+
   return (
     <div className="space-y-6">
-      <h1 className="text-3xl font-bold mb-3">Über unseren Verein</h1>
+      <h1 className="text-3xl font-bold mb-3">{t("headline")}</h1>
       <p>
         Der Faschingsverein Example e.V. wurde 1975 in Musterstadt gegründet und
         begeistert seitdem Besucherinnen und Besucher mit stimmungsvollen
