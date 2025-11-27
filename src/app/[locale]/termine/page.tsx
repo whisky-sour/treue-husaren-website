@@ -1,51 +1,65 @@
 import type { Metadata } from "next";
+import { Locale } from "@/i18n/config";
+import Link from "next/link";
+import { events } from "@/data/events";
 
-export const metadata: Metadata = {
-  title: "Termine & Veranstaltungen | Faschingsverein Example e.V.",
-  description:
-    "Alle Termine und Veranstaltungen des Faschingsverein Example e.V. in Musterstadt – Prunksitzungen, Kinderfasching, Umzüge.",
+type Props = {
+  params: Promise<{ locale: Locale }>;
 };
 
-type Event = {
-  title: string;
-  date: string;
-  location: string;
-  slug: string;
-};
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  const { locale } = await params;
+  const isDe = locale === "de";
 
-const events: Event[] = [
-  {
-    title: "Große Prunksitzung 2026",
-    date: "15. Februar 2026, 19:31 Uhr",
-    location: "Stadthalle Musterstadt",
-    slug: "prunksitzung-2026",
-  },
-  {
-    title: "Kinderfasching 2026",
-    date: "16. Februar 2026, 14:11 Uhr",
-    location: "Vereinsheim Musterstadt",
-    slug: "kinderfasching-2026",
-  },
-];
+  return {
+    title: isDe
+      ? "Termine & Veranstaltungen | Faschingsverein Example e.V."
+      : "Events | Carnival Club Example",
+    description: isDe
+      ? "Alle Termine und Veranstaltungen des Faschingsverein Example e.V. in Musterstadt."
+      : "All events of Carnival Club Example in Musterstadt.",
+  };
+}
 
-export default function TerminePage() {
+export default async function TerminePage({ params }: Props) {
+  const { locale } = await params;
+  const isDe = locale === "de";
+
   return (
     <div className="space-y-6">
-      <h1 className="text-3xl font-bold mb-3">Termine & Veranstaltungen</h1>
-      <p>Hier findest du unsere aktuellen Faschingsveranstaltungen.</p>
+      <h1 className="text-2xl sm:text-3xl font-bold mb-3">
+        {isDe ? "Termine & Veranstaltungen" : "Events"}
+      </h1>
+      <p>
+        {isDe
+          ? "Hier findest du unsere aktuellen Faschingsveranstaltungen."
+          : "Here you can find our current carnival events."}
+      </p>
 
       <ul className="space-y-4">
-        {events.map((event) => (
-          <li key={event.slug} className="border p-4 rounded">
-            <h2 className="text-xl font-semibold">{event.title}</h2>
-            <p className="text-sm">{event.date}</p>
-            <p className="text-sm mb-2">{event.location}</p>
-            {/* Optional: eigene Detailseite pro Event */}
-            {/* <a href={`/termine/${event.slug}`} className="text-blue-600 underline">
-              Mehr Infos
-            </a> */}
-          </li>
-        ))}
+        {events.map((event) => {
+          const title = isDe ? event.titleDe : event.titleEn;
+          const date = new Date(event.startDate).toLocaleString(
+            locale === "de" ? "de-DE" : "en-GB",
+            { dateStyle: "full", timeStyle: "short" },
+          );
+
+          return (
+            <li key={event.slug} className="border rounded p-4">
+              <h2 className="text-lg sm:text-xl font-semibold mb-1">{title}</h2>
+              <p className="text-sm mb-1">{date}</p>
+              <p className="text-sm mb-2">
+                {event.locationName}, {event.addressLocality}
+              </p>
+              <Link
+                href={`/${locale}/termine/${event.slug}`}
+                className="text-sm underline underline-offset-2"
+              >
+                {isDe ? "Mehr Infos" : "More information"}
+              </Link>
+            </li>
+          );
+        })}
       </ul>
     </div>
   );
