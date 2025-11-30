@@ -23,14 +23,18 @@ export default async function VereinPage({ params }: Props) {
   return (
     <div className="space-y-10">
       {/* Intro */}
-      <section className="space-y-3">
+      <section className="relative overflow-hidden rounded-3xl bg-white shadow-md px-4 py-6 sm:px-8 sm:py-10">
+        {/* Deko-Konfetti, nur optisch */}
+        <div className="pointer-events-none absolute -right-10 -top-10 h-24 w-24 rounded-full bg-brand-red/10 blur-2xl" />
+        <div className="pointer-events-none absolute -left-8 bottom-0 h-20 w-20 rounded-full bg-brand-green/10 blur-2xl" />
+
         <p className="text-[11px] font-semibold uppercase tracking-[0.2em] text-brand-red">
           {isDe ? "Unser Verein" : "Our club"}
         </p>
-        <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold tracking-tight">
+        <h1 className="mt-2 text-2xl sm:text-3xl md:text-4xl font-bold tracking-tight">
           {t("title")}
         </h1>
-        <p className="text-sm sm:text-base leading-relaxed text-brand-muted max-w-2xl">
+        <p className="mt-3 text-sm sm:text-base leading-relaxed text-brand-muted max-w-2xl">
           {t("intro")}
         </p>
       </section>
@@ -45,28 +49,33 @@ export default async function VereinPage({ params }: Props) {
         </p>
 
         <div className="grid gap-4 sm:grid-cols-2">
-          <Card>
+          <Card className="relative overflow-hidden transition-transform hover:-translate-y-0.5 hover:shadow-lg">
+            <div className="absolute inset-x-0 top-0 h-1 bg-brand-green/60" />
             <h3 className="text-base sm:text-lg font-semibold mb-1">
               {t("groupGuard")}
             </h3>
             <p className="text-sm text-brand-muted">{t("groupGuardDesc")}</p>
           </Card>
 
-          <Card>
+          <Card className="relative overflow-hidden transition-transform hover:-translate-y-0.5 hover:shadow-lg">
+            <div className="absolute inset-x-0 top-0 h-1 bg-brand-red/60" />
             <h3 className="text-base sm:text-lg font-semibold mb-1">
               {t("groupYouth")}
             </h3>
             <p className="text-sm text-brand-muted">{t("groupYouthDesc")}</p>
           </Card>
 
-          <Card>
+          <Card className="relative overflow-hidden transition-transform hover:-translate-y-0.5 hover:shadow-lg">
+            <div className="absolute inset-x-0 top-0 h-1 bg-brand-green/60" />
             <h3 className="text-base sm:text-lg font-semibold mb-1">
               {t("groupElferrat")}
             </h3>
             <p className="text-sm text-brand-muted">{t("groupElferratDesc")}</p>
           </Card>
 
-          <Card>
+          <Card className="relative overflow-hidden transition-transform hover:-translate-y-0.5 hover:shadow-lg">
+            <div className="absolute inset-x-0 top-0 h-1 bg-brand-red/60" />
+
             <h3 className="text-base sm:text-lg font-semibold mb-1">
               {t("groupTech")}
             </h3>
