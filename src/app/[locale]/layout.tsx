@@ -1,16 +1,14 @@
-// src/app/[locale]/layout.tsx
 import type { Metadata } from "next";
-import { hasLocale } from "next-intl";
-import { NextIntlClientProvider } from "next-intl";
+import { hasLocale, NextIntlClientProvider } from "next-intl";
 import { ReactNode } from "react";
 import { notFound } from "next/navigation";
 import { setRequestLocale } from "next-intl/server";
-import { locales, type Locale } from "@/i18n/config";
-import { routing } from "@/i18n/routing";
+import { Locale, locales } from "@/i18n/config";
+import Image from "next/image";
 import Navigation from "@/app/components/Navigation";
 import "../globals.css";
 
-type Params = { locale: Locale };
+type Params = { locale: string };
 type LayoutProps = { children: ReactNode; params: Promise<Params> };
 
 export async function generateStaticParams() {
@@ -24,43 +22,51 @@ export const metadata: Metadata = {
 };
 
 async function getMessages(locale: Locale) {
-  const messages = (await import(`@/i18n/messages/${locale}.json`)).default;
-  return messages;
+  return (await import(`@/i18n/messages/${locale}.json`)).default;
 }
 
 export default async function LocaleLayout({ children, params }: LayoutProps) {
-  const { locale } = await params;
+  const { locale: rawLocale } = await params;
 
-  // Locale validieren
-  if (!hasLocale(locales, locale)) {
+  // Locale validieren + auf unseren Locale-Typ einschränken
+  if (!hasLocale(locales, rawLocale)) {
     notFound();
   }
+
+  const locale = rawLocale as Locale;
 
   setRequestLocale(locale);
   const messages = await getMessages(locale);
 
   return (
     <html lang={locale}>
-      <body className="min-h-screen flex flex-col bg-slate-50 text-slate-900">
+      <body className="min-h-screen flex flex-col bg-brand-bg text-brand-text">
         <NextIntlClientProvider messages={messages} locale={locale}>
           <header className="border-b bg-white/90 backdrop-blur sticky top-0 z-40">
             <div className="max-w-5xl mx-auto px-4 py-3 flex items-center justify-between gap-3">
               <div className="flex items-center gap-2">
                 {/* Optional: Logo/Icon */}
-                <div className="h-8 w-8 rounded-full bg-gradient-to-br from-purple-600 via-fuchsia-500 to-pink-500" />
+                <Image
+                  src="/logo-husar.svg"
+                  alt="Treue Husaren Fürth Logo"
+                  width={40}
+                  height={40}
+                  priority
+                  className="shrink-0"
+                />
                 <div className="leading-tight">
-                  <div className="font-bold text-sm sm:text-base">
+                  <div className="font-bold text-sm sm:text-base text-brand-text">
                     Treue Husaren Fürth e.V.
                   </div>
-                  <div className="text-[11px] sm:text-xs text-slate-500">
+                  <div className="text-[11px] sm:text-xs text-brand-text">
                     Fasching mit Herz
                   </div>
                 </div>
               </div>
 
-              {/* Navigation inkl. Burger-Menü */}
               <Navigation />
             </div>
+            <div className="h-1 bg-brand-green" />
           </header>
 
           <main className="flex-1 max-w-5xl mx-auto px-4 py-6 sm:py-8">

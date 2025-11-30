@@ -5,9 +5,9 @@
     "contact": "Kontakt"
   },
   "Home": {
-    "title": "Treue Husaren Fürth e.V.",
-    "subtitle": "Fasching mit Herz in Fürth und Umgebung",
-    "text": "Wir organisieren Prunksitzungen, Kinderfasching, Umzüge und viele weitere Veranstaltungen rund um die fünfte Jahreszeit.",
+    "heroTitle": "Treue Husaren Fürth e.V.",
+    "heroSubtitle": "Fasching mit Herz in Fürth und Umgebung",
+    "heroText": "Wir organisieren Prunksitzungen, Kinderfasching, Umzüge und viele weitere Veranstaltungen rund um die fünfte Jahreszeit.",
     "nextEventsTitle": "Nächste Veranstaltungen",
     "ctaTitle": "Mach mit bei den Treuen Husaren",
     "ctaText": "Du möchtest auf der Bühne stehen, im Hintergrund organisieren oder in der Technik helfen? Bei uns ist jede und jeder willkommen.",

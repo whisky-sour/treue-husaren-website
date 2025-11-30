@@ -2,6 +2,7 @@
 import type { Metadata } from "next";
 import { getTranslations } from "next-intl/server";
 import { Locale } from "@/i18n/config";
+import { PageSection } from "@/app/components/ui/PageSection";
 
 export const metadata: Metadata = {
   title: "Über uns | Treue Husaren Fürth e.V.",
@@ -29,16 +30,7 @@ export default async function VereinPage({ params }: Props) {
       </section>
 
       {/* Gruppen-Section */}
-      <section className="space-y-4">
-        <header className="space-y-2">
-          <h2 className="text-xl sm:text-2xl font-semibold">
-            {t("groupsTitle")}
-          </h2>
-          <p className="text-sm sm:text-base text-slate-400">
-            {t("groupsDescription")}
-          </p>
-        </header>
-
+      <PageSection title={t("groupsTitle")} eyebrow={t("groupsDescription")}>
         <div className="grid gap-4 sm:gap-6 sm:grid-cols-2">
           <div className="rounded-xl border bg-white/80 p-4 sm:p-5 shadow-sm">
             <h3 className="text-base sm:text-lg font-semibold mb-1 text-amber-500 ">
@@ -76,7 +68,7 @@ export default async function VereinPage({ params }: Props) {
             </p>
           </div>
         </div>
-      </section>
+      </PageSection>
 
       {/* Vorstand-Section (Platzhalter) */}
       <section className="space-y-4">
