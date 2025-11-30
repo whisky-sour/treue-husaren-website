@@ -1,10 +1,11 @@
-// src/app/[locale]/termine/[slug]/page.tsx
 import { notFound } from "next/navigation";
 import type { Metadata } from "next";
 import { events } from "@/data/events";
 import type { Locale } from "@/i18n/config";
+import { Card } from "@/app/components/ui/Card";
+import { Button } from "@/app/components/ui/Button";
 
-type Params = { locale: Locale; slug: string };
+type Params = { locale: string; slug: string };
 type Props = { params: Promise<Params> };
 
 function getEventBySlug(slug: string) {
@@ -22,7 +23,8 @@ export function generateStaticParams() {
 }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
-  const { locale, slug } = await params;
+  const { locale: rawLocale, slug } = await params;
+  const locale = rawLocale as Locale;
   const event = getEventBySlug(slug);
   if (!event) return {};
 
@@ -36,7 +38,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   };
 }
 
-// JSON-LD für dieses Event
+// JSON-LD
 function EventJsonLd({
   event,
   locale,
@@ -83,17 +85,17 @@ function EventJsonLd({
 }
 
 export default async function EventDetailPage({ params }: Props) {
-  const { locale, slug } = await params;
-  const event = getEventBySlug(slug);
+  const { locale: rawLocale, slug } = await params;
+  const locale = rawLocale as Locale;
+  const isDe = locale === "de";
 
+  const event = getEventBySlug(slug);
   if (!event) {
     notFound();
   }
 
-  const isDe = locale === "de";
   const title = isDe ? event!.titleDe : event!.titleEn;
   const description = isDe ? event!.descriptionDe : event!.descriptionEn;
-
   const date = new Date(event!.startDate).toLocaleString(
     locale === "de" ? "de-DE" : "en-GB",
     { dateStyle: "full", timeStyle: "short" },
@@ -104,48 +106,48 @@ export default async function EventDetailPage({ params }: Props) {
       <EventJsonLd event={event!} locale={locale} />
 
       <article className="space-y-6">
-        {/* Titel + Meta */}
+        {/* Header */}
         <header className="space-y-2">
-          <p className="text-xs font-semibold uppercase tracking-[0.2em] text-fuchsia-700">
+          <p className="text-[11px] font-semibold uppercase tracking-[0.2em] text-brand-red">
             {isDe ? "Veranstaltung" : "Event"}
           </p>
           <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold tracking-tight">
             {title}
           </h1>
-          <p className="text-xs sm:text-sm text-slate-700">
+          <p className="text-xs sm:text-sm text-brand-muted">
             {date} · {event!.locationName}, {event!.addressLocality}
           </p>
         </header>
 
-        {/* Beschreibung + Location in Cards */}
+        {/* Inhalt in zwei Spalten ab lg */}
         <div className="grid gap-4 lg:grid-cols-[2fr,1fr]">
-          <section className="rounded-2xl border bg-white/80 p-4 sm:p-5 shadow-sm space-y-3">
+          <Card className="space-y-3">
             <h2 className="text-base sm:text-lg font-semibold">
               {isDe ? "Über die Veranstaltung" : "About this event"}
             </h2>
-            <p className="text-sm sm:text-base leading-relaxed text-slate-700">
+            <p className="text-sm sm:text-base leading-relaxed text-brand-muted">
               {description}
             </p>
-          </section>
+          </Card>
 
-          <aside className="space-y-3">
-            <div className="rounded-2xl border bg-white/80 p-4 sm:p-5 shadow-sm">
+          <div className="space-y-3">
+            <Card>
               <h3 className="text-sm sm:text-base font-semibold mb-1">
                 {isDe ? "Ort" : "Location"}
               </h3>
-              <p className="text-xs sm:text-sm text-slate-700">
+              <p className="text-xs sm:text-sm text-brand-muted">
                 {event!.locationName}
                 <br />
                 {event!.streetAddress}
                 <br />
                 {event!.postalCode} {event!.addressLocality}
               </p>
-            </div>
-          </aside>
+            </Card>
+          </div>
         </div>
 
-        {/* CTA z.B. Tickets / Kontakt */}
-        <section className="rounded-2xl border bg-gradient-to-r from-purple-600/90 via-fuchsia-500/90 to-pink-500/90 px-4 py-5 sm:px-6 sm:py-6 text-white shadow-md">
+        {/* CTA */}
+        <section className="rounded-2xl border border-gray-200 bg-gradient-to-r from-brand-red via-red-700 to-brand-red px-4 py-5 sm:px-6 sm:py-6 text-white shadow-md">
           <h2 className="text-base sm:text-lg font-semibold mb-2">
             {isDe ? "Fragen zur Veranstaltung?" : "Questions about this event?"}
           </h2>
@@ -154,12 +156,9 @@ export default async function EventDetailPage({ params }: Props) {
               ? "Bei Fragen zu Tickets, Einlass oder Reservierungen melde dich gerne bei uns."
               : "If you have any questions about tickets, admission or reservations, feel free to contact us."}
           </p>
-          <a
-            href={`/${locale}/kontakt`}
-            className="inline-flex items-center rounded-full bg-white/90 px-4 py-2 text-xs sm:text-sm font-semibold text-fuchsia-700 shadow hover:bg-white transition"
-          >
+          <Button href={`/${locale}/kontakt`} variant="outline">
             {isDe ? "Kontakt aufnehmen" : "Contact us"}
-          </a>
+          </Button>
         </section>
       </article>
     </>

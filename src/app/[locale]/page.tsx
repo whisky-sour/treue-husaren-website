@@ -42,7 +42,12 @@ export default async function HomePage({ params }: Props) {
   const t = await getTranslations("Home");
   const isDe = locale === "de";
 
-  const upcomingEvents = events.slice(0, 2);
+  const upcomingEvents = events
+    .sort(
+      (a, b) =>
+        new Date(a.startDate).getTime() - new Date(b.startDate).getTime(),
+    )
+    .slice(0, 2);
 
   return (
     <>

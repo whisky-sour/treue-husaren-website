@@ -43,4 +43,47 @@ export const events: Event[] = [
     postalCode: "12345",
     addressLocality: "Musterstadt",
   },
+  {
+    slug: "wolpertinger-2026",
+    titleDe: "Wolpertinger Essen 2026",
+    titleEn: "Wolpertinger Feast 2026",
+    descriptionDe:
+      "Traditionelles Wolpertinger Essen mit regionalen Spezialitäten.",
+    descriptionEn: "Traditional Wolpertinger feast with regional specialties.",
+    startDate: "2026-03-01T18:00:00+01:00",
+    endDate: "2026-03-01T22:00:00+01:00",
+    locationName: "Gasthof Zum Wolpertinger",
+    streetAddress: "Wolpertingerweg 5",
+    postalCode: "12345",
+    addressLocality: "Musterstadt",
+  },
+  {
+    slug: "fischessen-2026",
+    titleDe: "Fischessen 2026",
+    titleEn: "Fish feast 2026",
+    descriptionDe: "Fischessen.",
+    descriptionEn:
+      "Our grand gala session with dance groups, speeches and live music in Musterstadt.",
+    startDate: "2026-01-31T19:11:00+01:00",
+    endDate: "2026-01-31T23:59:00+01:00",
+    locationName: "Stadthalle Musterstadt",
+    streetAddress: "Hallenweg 1",
+    postalCode: "12345",
+    addressLocality: "Musterstadt",
+  },
+  {
+    slug: "weihnachtsfeier-2025",
+    titleDe: "Weihnachtsfeier 2025",
+    titleEn: "Christmas party 2025",
+    descriptionDe:
+      "Interne Weihnachtsfeier um gemeinsam die Weihnachszeit zu feiern (Christkind kommt auch).",
+    descriptionEn:
+      "Our grand gala session with dance groups, speeches and live music in Musterstadt.",
+    startDate: "2025-12-14T18:00:00+01:00",
+    endDate: "2025-12-14T21:00:00+01:00",
+    locationName: "Bürgerschützen Weiherhof",
+    streetAddress: "Wegweg 123",
+    postalCode: "12345",
+    addressLocality: "Musterstadt",
+  },
 ];
