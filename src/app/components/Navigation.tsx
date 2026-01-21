@@ -3,26 +3,26 @@
 import { useEffect, useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { useLocale } from "next-intl";
+import { useLocale, useTranslations } from "next-intl";
 import type { Locale } from "@/i18n/config";
 
 type NavLink = {
   segment: string; // "", "verein", ...
-  labelDe: string;
-  labelEn: string;
+  labelKey: string;
 };
 
 const LINKS: NavLink[] = [
-  { segment: "", labelDe: "Start", labelEn: "Home" },
-  { segment: "verein", labelDe: "Verein", labelEn: "Club" },
-  { segment: "termine", labelDe: "Termine", labelEn: "Events" },
-  { segment: "kontakt", labelDe: "Kontakt", labelEn: "Contact" },
+  { segment: "", labelKey: "home" },
+  { segment: "verein", labelKey: "about" },
+  { segment: "termine", labelKey: "events" },
+  { segment: "kontakt", labelKey: "contact" },
 ];
 
 export default function Navigation() {
   const [open, setOpen] = useState(false);
   const pathname = usePathname();
   const locale = useLocale() as Locale;
+  const t = useTranslations("Nav");
   const isDe = locale === "de";
 
   // Menü schließen, wenn Route wechselt
@@ -59,7 +59,7 @@ export default function Navigation() {
               isActive(link.segment) ? "font-semibold text-brand-red" : ""
             }`}
           >
-            {isDe ? link.labelDe : link.labelEn}
+            {t(link.labelKey)}
           </Link>
         ))}
 
@@ -135,7 +135,7 @@ export default function Navigation() {
                       : "text-brand-text hover:bg-gray-50"
                   }`}
                 >
-                  {isDe ? link.labelDe : link.labelEn}
+                  {t(link.labelKey)}
                 </Link>
               ))}
 

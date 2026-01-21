@@ -4,6 +4,7 @@ import Link from "next/link";
 import { events } from "@/data/events";
 import { Badge } from "@/app/components/ui/Badge";
 import { Card } from "@/app/components/ui/Card";
+import { getTranslations } from "next-intl/server";
 
 type Props = {
   params: Promise<{ locale: Locale }>;
@@ -49,20 +50,16 @@ function getDateParts(dateObj: Date, locale: Locale): DateParts {
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { locale } = await params;
-  const isDe = locale === "de";
-
+  const t = await getTranslations("EventsPage");
   return {
-    title: isDe
-      ? "Termine & Veranstaltungen | Faschingsverein Example e.V."
-      : "Events | Carnival Club Example",
-    description: isDe
-      ? "Alle Termine und Veranstaltungen des Faschingsverein Example e.V. in Musterstadt."
-      : "All events of Carnival Club Example in Musterstadt.",
+    title: t("metaTitle"),
+    description: t("metaDescription"),
   };
 }
 
 export default async function TerminePage({ params }: Props) {
   const { locale } = await params;
+  const t = await getTranslations("EventsPage");
   const isDe = locale === "de";
 
   const sortedEvents = [...events].sort((a, b) =>
@@ -71,14 +68,8 @@ export default async function TerminePage({ params }: Props) {
 
   return (
     <div className="space-y-6">
-      <h1 className="text-2xl sm:text-3xl font-bold mb-3">
-        {isDe ? "Termine & Veranstaltungen" : "Events"}
-      </h1>
-      <p>
-        {isDe
-          ? "Hier findest du unsere aktuellen Faschingsveranstaltungen."
-          : "Here you can find our current carnival events."}
-      </p>
+      <h1 className="text-2xl sm:text-3xl font-bold mb-3">{t("title")}</h1>
+      <p>{t("intro")}</p>
 
       <ul className="space-y-4">
         {sortedEvents.map((event) => {
@@ -113,7 +104,7 @@ export default async function TerminePage({ params }: Props) {
                     <h2 className="text-base sm:text-lg font-semibold text-brand-text">
                       {title}
                     </h2>
-                    <Badge>{isDe ? "Fasching" : "Carnival"}</Badge>
+                    <Badge>{t("badge")}</Badge>
                   </div>
 
                   <p className="text-xs sm:text-sm text-brand-muted">
@@ -128,24 +119,11 @@ export default async function TerminePage({ params }: Props) {
                       href={`/${locale}/termine/${event.slug}`}
                       className="text-xs sm:text-sm font-semibold text-brand-red underline underline-offset-2"
                     >
-                      {isDe ? "Mehr Infos" : "More information"}
+                      {t("moreInfo")}
                     </Link>
                   </div>
                 </div>
               </Card>
-              {/*<Card className="relative overflow-hidden transition-transform hover:-translate-y-0.5 hover:shadow-lg">
-                <div className="absolute inset-x-0 top-0 h-1 bg-brand-green/60" />
-              <h2 className="text-lg sm:text-xl font-semibold mb-1">{title}</h2>
-              <p className="text-sm mb-1">{date}</p>
-              <p className="text-sm mb-2">
-                {event.locationName}, {event.addressLocality}
-              </p>
-              <Link
-                href={`/${locale}/termine/${event.slug}`}
-                className="text-sm underline underline-offset-2"
-              >
-                {isDe ? "Mehr Infos" : "More information"}
-              </Link>*/}
             </li>
           );
         })}

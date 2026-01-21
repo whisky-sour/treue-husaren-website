@@ -4,6 +4,7 @@ import { events } from "@/data/events";
 import type { Locale } from "@/i18n/config";
 import { Card } from "@/app/components/ui/Card";
 import { Button } from "@/app/components/ui/Button";
+import { getTranslations } from "next-intl/server";
 
 type Params = { locale: string; slug: string };
 type Props = { params: Promise<Params> };
@@ -88,6 +89,7 @@ export default async function EventDetailPage({ params }: Props) {
   const { locale: rawLocale, slug } = await params;
   const locale = rawLocale as Locale;
   const isDe = locale === "de";
+  const t = await getTranslations("EventDetail");
 
   const event = getEventBySlug(slug);
   if (!event) {
@@ -109,7 +111,7 @@ export default async function EventDetailPage({ params }: Props) {
         {/* Header */}
         <header className="space-y-2">
           <p className="text-[11px] font-semibold uppercase tracking-[0.2em] text-brand-red">
-            {isDe ? "Veranstaltung" : "Event"}
+            {t("eventLabel")}
           </p>
           <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold tracking-tight">
             {title}
@@ -123,7 +125,7 @@ export default async function EventDetailPage({ params }: Props) {
         <div className="grid gap-4 lg:grid-cols-[2fr,1fr]">
           <Card className="space-y-3">
             <h2 className="text-base sm:text-lg font-semibold">
-              {isDe ? "Über die Veranstaltung" : "About this event"}
+              {t("aboutEvent")}
             </h2>
             <p className="text-sm sm:text-base leading-relaxed text-brand-muted">
               {description}
@@ -133,7 +135,7 @@ export default async function EventDetailPage({ params }: Props) {
           <div className="space-y-3">
             <Card>
               <h3 className="text-sm sm:text-base font-semibold mb-1">
-                {isDe ? "Ort" : "Location"}
+                {t("location")}
               </h3>
               <p className="text-xs sm:text-sm text-brand-muted">
                 {event!.locationName}
@@ -149,15 +151,13 @@ export default async function EventDetailPage({ params }: Props) {
         {/* CTA */}
         <section className="rounded-2xl border border-gray-200 bg-gradient-to-r from-brand-red via-red-700 to-brand-red px-4 py-5 sm:px-6 sm:py-6 text-white shadow-md">
           <h2 className="text-base sm:text-lg font-semibold mb-2">
-            {isDe ? "Fragen zur Veranstaltung?" : "Questions about this event?"}
+            {t("questionsTitle")}
           </h2>
           <p className="text-xs sm:text-sm mb-3 max-w-xl">
-            {isDe
-              ? "Bei Fragen zu Tickets, Einlass oder Reservierungen melde dich gerne bei uns."
-              : "If you have any questions about tickets, admission or reservations, feel free to contact us."}
+            {t("questionsText")}
           </p>
           <Button href={`/${locale}/kontakt`} variant="outline">
-            {isDe ? "Kontakt aufnehmen" : "Contact us"}
+            {t("contactButton")}
           </Button>
         </section>
       </article>

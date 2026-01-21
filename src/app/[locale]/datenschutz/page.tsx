@@ -1,22 +1,18 @@
 import type { Metadata } from "next";
+import { getTranslations } from "next-intl/server";
 
 export const metadata: Metadata = {
   title: "Datenschutzerklärung | Faschingsverein Example e.V.",
 };
 
-export default function DatenschutzPage() {
+export default async function DatenschutzPage() {
+  const t = await getTranslations("Privacy");
+
   return (
     <div className="space-y-4">
-      <h1 className="text-3xl font-bold mb-3">Datenschutzerklärung</h1>
-      <p>
-        Hier kommt eure vollständige Datenschutzerklärung hin (von einem
-        seriösen Generator oder Anwalt).
-      </p>
-      <p>
-        Bitte keine Mustertexte kopieren – achtet darauf, dass alle eingesetzten
-        Dienste (z. B. Kontaktformular, eingebettete Karten, Social Media Links)
-        korrekt beschrieben sind.
-      </p>
+      <h1 className="text-3xl font-bold mb-3">{t("title")}</h1>
+      <p>{t("section1")}</p>
+      <p>{t("section2")}</p>
     </div>
   );
 }

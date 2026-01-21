@@ -40,6 +40,7 @@ function OrganizationJsonLd() {
 export default async function HomePage({ params }: Props) {
   const { locale } = await params;
   const t = await getTranslations("Home");
+  const tNav = await getTranslations("Nav");
   const isDe = locale === "de";
 
   const upcomingEvents = events
@@ -56,7 +57,7 @@ export default async function HomePage({ params }: Props) {
         {/* Hero */}
         <section className="space-y-4">
           <p className="text-[11px] font-semibold uppercase tracking-[0.2em] text-brand-red">
-            {isDe ? "Faschingsverein" : "Carnival club"}
+            {t("heroLabel")}
           </p>
           <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight text-brand-text">
             {t("heroTitle")}
@@ -76,11 +77,7 @@ export default async function HomePage({ params }: Props) {
           </h2>
 
           {upcomingEvents.length === 0 ? (
-            <p className="text-sm text-brand-muted">
-              {isDe
-                ? "Aktuell sind keine Termine eingetragen."
-                : "Currently there are no events listed."}
-            </p>
+            <p className="text-sm text-brand-muted">{t("noUpcomingEvents")}</p>
           ) : (
             <ul className="grid gap-4 sm:grid-cols-2">
               {upcomingEvents.map((event) => {
@@ -97,7 +94,7 @@ export default async function HomePage({ params }: Props) {
                         <h3 className="text-base sm:text-lg font-semibold text-brand-text">
                           {title}
                         </h3>
-                        <Badge>{isDe ? "Demnächst" : "Upcoming"}</Badge>
+                        <Badge>{t("upcomingBadge")}</Badge>
                       </div>
                       <p className="text-xs sm:text-sm text-brand-muted mb-1">
                         {date}
@@ -109,7 +106,7 @@ export default async function HomePage({ params }: Props) {
                         href={`/${locale}/termine/${event.slug}`}
                         className="text-xs sm:text-sm font-semibold text-brand-red underline underline-offset-2 hover:text-brand-green"
                       >
-                        {isDe ? "Mehr Infos" : "More information"}
+                        {t("moreInfo")}
                       </a>
                     </Card>
                   </li>

@@ -2,18 +2,24 @@
   "Nav": {
     "home": "Start",
     "about": "Verein",
+    "events": "Termine",
     "contact": "Kontakt"
   },
   "Home": {
+    "heroLabel": "Faschingsverein",
     "heroTitle": "Treue Husaren Fürth e.V.",
     "heroSubtitle": "Fasching mit Herz in Fürth und Umgebung",
     "heroText": "Wir organisieren Prunksitzungen, Kinderfasching, Umzüge und viele weitere Veranstaltungen rund um die fünfte Jahreszeit.",
     "nextEventsTitle": "Nächste Veranstaltungen",
+    "noUpcomingEvents": "Aktuell sind keine Termine eingetragen.",
+    "upcomingBadge": "Demnächst",
+    "moreInfo": "Mehr Infos",
     "ctaTitle": "Mach mit bei den Treuen Husaren",
     "ctaText": "Du möchtest auf der Bühne stehen, im Hintergrund organisieren oder in der Technik helfen? Bei uns ist jede und jeder willkommen.",
     "ctaButton": "Mitglied werden"
   },
   "Verein": {
+    "introLabel": "Unser Verein",
     "title": "Über unseren Verein",
     "intro": "Die Treuen Husaren Fürth sind ein traditionsreicher Faschingsverein, der seit vielen Jahren die fünfte Jahreszeit in Fürth und Umgebung mitgestaltet.",
     "groupsTitle": "Unsere Gruppen",
@@ -28,8 +34,55 @@
     "groupTechDesc": "Ton, Licht, Musik – unser Technikteam sorgt dafür, dass auf und vor der Bühne alles passt.",
     "boardTitle": "Vorstand",
     "boardDescription": "Der Vorstand der Treuen Husaren Fürth e.V. koordiniert das Vereinsleben und vertritt den Verein nach außen.",
+    "boardMember1Name": "Max Mustermann",
+    "boardMember1Role": "1. Vorsitzende/r",
+    "boardMember1Desc": "Verantwortlich für Gesamtkoordination und Vereinsvertretung.",
+    "boardMember2Name": "Erika Beispiel",
+    "boardMember2Role": "2. Vorsitzende/r",
+    "boardMember2Desc": "Schnittstelle zwischen Garden, Aktiven und Vorstand.",
+    "boardMember3Name": "Vorname Nachname",
+    "boardMember3Role": "Kassier/in",
+    "boardMember3Desc": "Zuständig für Finanzen, Beiträge und Abrechnung.",
     "ctaTitle": "Mach mit bei den Treuen Husaren",
     "ctaText": "Du möchtest Teil der Treuen Husaren werden – als Tänzerin, Tänzer, in der Technik oder Organisation?",
     "ctaButton": "Mitglied werden"
+  },
+  "EventsPage": {
+    "metaTitle": "Termine & Veranstaltungen | Faschingsverein Example e.V.",
+    "metaDescription": "Alle Termine und Veranstaltungen des Faschingsverein Example e.V. in Musterstadt.",
+    "title": "Termine & Veranstaltungen",
+    "intro": "Hier findest du unsere aktuellen Faschingsveranstaltungen.",
+    "badge": "Fasching",
+    "moreInfo": "Mehr Infos"
+  },
+  "EventDetail": {
+    "eventLabel": "Veranstaltung",
+    "aboutEvent": "Über die Veranstaltung",
+    "location": "Ort",
+    "questionsTitle": "Fragen zur Veranstaltung?",
+    "questionsText": "Bei Fragen zu Tickets, Einlass oder Reservierungen melde dich gerne bei uns.",
+    "contactButton": "Kontakt aufnehmen"
+  },
+  "Contact": {
+    "title": "Kontakt",
+    "intro": "Du möchtest Tickets reservieren, Mitglied werden oder hast eine Frage zu unseren Veranstaltungen? Melde dich gerne bei uns.",
+    "addressTitle": "Anschrift",
+    "address": "Faschingsverein Example e.V.\nMusterstraße 11\n12345 Musterstadt",
+    "emailPhoneTitle": "E-Mail & Telefon",
+    "emailLabel": "E-Mail",
+    "phoneLabel": "Telefon"
+  },
+  "Impressum": {
+    "title": "Impressum",
+    "section1": "Angaben gemäß § 5 TMG (Platzhalter – durch korrekte Angaben ersetzen):",
+    "section2": "Faschingsverein Example e.V.\nMusterstraße 11\n12345 Musterstadt",
+    "section3": "Vertreten durch den Vorstand:\nVorname Nachname (1. Vorsitzende/r)",
+    "section4": "Vereinsregister: VR 1234\nRegistergericht: Amtsgericht Musterstadt",
+    "section5": "Kontakt:\nTelefon: 01234 / 567890\nE-Mail: info@faschingsverein-example.de"
+  },
+  "Privacy": {
+    "title": "Datenschutzerklärung",
+    "section1": "Hier kommt eure vollständige Datenschutzerklärung hin (von einem seriösen Generator oder Anwalt).",
+    "section2": "Bitte keine Mustertexte kopieren – achtet darauf, dass alle eingesetzten Dienste (z. B. Kontaktformular, eingebettete Karten, Social Media Links) korrekt beschrieben sind."
   }
 }

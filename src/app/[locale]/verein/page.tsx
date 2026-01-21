@@ -15,7 +15,7 @@ export const metadata: Metadata = {
 
 export default async function VereinPage({ params }: Props) {
   const { locale: rawLocale } = await params;
-  const locale = rawLocale as Locale; // Layout hat die Locale schon validiert
+  const locale = rawLocale as Locale;
   const isDe = locale === "de";
 
   const t = await getTranslations("Verein");
@@ -29,7 +29,7 @@ export default async function VereinPage({ params }: Props) {
         <div className="pointer-events-none absolute -left-8 bottom-0 h-20 w-20 rounded-full bg-brand-green/10 blur-2xl" />
 
         <p className="text-[11px] font-semibold uppercase tracking-[0.2em] text-brand-red">
-          {isDe ? "Unser Verein" : "Our club"}
+          {t("introLabel")}
         </p>
         <h1 className="mt-2 text-2xl sm:text-3xl md:text-4xl font-bold tracking-tight">
           {t("title")}
@@ -93,37 +93,31 @@ export default async function VereinPage({ params }: Props) {
 
         <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
           <Card>
-            <div className="text-sm font-semibold mb-1">Max Mustermann</div>
-            <div className="text-xs text-brand-muted mb-2">
-              {isDe ? "1. Vorsitzende/r" : "Chairperson"}
+            <div className="text-sm font-semibold mb-1">
+              {t("boardMember1Name")}
             </div>
-            <p className="text-xs text-brand-muted">
-              {isDe
-                ? "Verantwortlich für Gesamtkoordination und Vereinsvertretung."
-                : "Responsible for overall coordination and representation."}
-            </p>
+            <div className="text-xs text-brand-muted mb-2">
+              {t("boardMember1Role")}
+            </div>
+            <p className="text-xs text-brand-muted">{t("boardMember1Desc")}</p>
           </Card>
           <Card>
-            <div className="text-sm font-semibold mb-1">Erika Beispiel</div>
-            <div className="text-xs text-brand-muted mb-2">
-              {isDe ? "2. Vorsitzende/r" : "Vice chairperson"}
+            <div className="text-sm font-semibold mb-1">
+              {t("boardMember2Name")}
             </div>
-            <p className="text-xs text-brand-muted">
-              {isDe
-                ? "Schnittstelle zwischen Garden, Aktiven und Vorstand."
-                : "Liaison between dance groups, active members and board."}
-            </p>
+            <div className="text-xs text-brand-muted mb-2">
+              {t("boardMember2Role")}
+            </div>
+            <p className="text-xs text-brand-muted">{t("boardMember2Desc")}</p>
           </Card>
           <Card>
-            <div className="text-sm font-semibold mb-1">Vorname Nachname</div>
-            <div className="text-xs text-brand-muted mb-2">
-              {isDe ? "Kassier/in" : "Treasurer"}
+            <div className="text-sm font-semibold mb-1">
+              {t("boardMember3Name")}
             </div>
-            <p className="text-xs text-brand-muted">
-              {isDe
-                ? "Zuständig für Finanzen, Beiträge und Abrechnung."
-                : "Responsible for finances, fees and accounting."}
-            </p>
+            <div className="text-xs text-brand-muted mb-2">
+              {t("boardMember3Role")}
+            </div>
+            <p className="text-xs text-brand-muted">{t("boardMember3Desc")}</p>
           </Card>
         </div>
       </section>
