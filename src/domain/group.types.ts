@@ -9,13 +9,14 @@ export type Group = {
 
   // Inhalte
   age: string;
+  joinable: boolean;
 
-  trainings: Array<{
+  training: {
     dayDe: string;
     dayEn: string;
     time: string; // "17:30–19:00"
     location: string;
-  }>;
+  };
 
   trainers: Array<Trainer>;
 
@@ -26,9 +27,21 @@ export type Group = {
 
 export type Trainer = { name: string; image?: string };
 
-export enum TrainerName {
-  EVA = "Eva Michalczyk",
-  TAMARA = "Tamara Eckstein",
-  JULIANE = "Juliane Müller",
-  MINO = "Mino Michalczyk",
-}
+export const Trainers: Record<string, Trainer> = {
+  EVA: {
+    name: "Eva Michalczyk",
+    image: "/images/gruppen/trainer/trainer-eva.jpg",
+  },
+  TAMARA: {
+    name: "Tamara Eckstein",
+    image: "/images/gruppen/trainer/trainer-tamara.jpg",
+  },
+  JULIANE: {
+    name: "Juliane Müller",
+    image: "/images/gruppen/trainer/trainer-juliane.jpg",
+  },
+  MINO: {
+    name: "Mino Michalczyk",
+    image: "/images/gruppen/trainer/trainer-mino.jpg",
+  },
+};

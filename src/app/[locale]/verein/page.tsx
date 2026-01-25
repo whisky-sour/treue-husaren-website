@@ -3,6 +3,8 @@ import { getTranslations } from "next-intl/server";
 import { Locale } from "@/i18n/config";
 import { Button } from "@/app/components/ui/Button";
 import { Card } from "@/app/components/ui/Card";
+import { groups } from "@/data/groups";
+import { GroupCard } from "@/app/[locale]/verein/GroupCard";
 
 type Params = { locale: string };
 type Props = { params: Promise<Params> };
@@ -21,7 +23,7 @@ export default async function VereinPage({ params }: Props) {
   const t = await getTranslations("Verein");
 
   // Gruppen-Definition als Array von Keys für Titel und Beschreibung
-  const groups = [
+  const groupsDummy = [
     { groupTitle: "groupGuard", groupDesc: "groupGuardDesc" },
     { groupTitle: "groupYouth", groupDesc: "groupYouthDesc" },
     { groupTitle: "groupTech", groupDesc: "groupTechDesc" },
@@ -58,21 +60,8 @@ export default async function VereinPage({ params }: Props) {
         </p>
 
         <div className="grid gap-4 sm:grid-cols-2">
-          {groups.map((group, idx) => (
-            <Card
-              key={group.groupTitle}
-              className="relative overflow-hidden transition-transform hover:-translate-y-0.5 hover:shadow-lg"
-            >
-              <div
-                className={`absolute inset-x-0 top-0 h-1 ${
-                  idx % 2 === 0 ? "bg-brand-green/60" : "bg-brand-red/60"
-                }`}
-              />
-              <h3 className="text-base sm:text-lg font-semibold mb-1">
-                {t(group.groupTitle)}
-              </h3>
-              <p className="text-sm text-brand-muted">{t(group.groupDesc)}</p>
-            </Card>
+          {groups.map((group) => (
+            <GroupCard key={group.slug} group={group} locale={locale} />
           ))}
         </div>
       </section>

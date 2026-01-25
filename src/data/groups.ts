@@ -1,4 +1,4 @@
-import { Group, TrainerName } from "@/domain/group.types";
+import { Group, Trainers } from "@/domain/group.types";
 
 export const groups: Group[] = [
   {
@@ -10,22 +10,15 @@ export const groups: Group[] = [
     descriptionEn:
       "Our Purzel group delights the little ones with playful dance and movement...",
     age: "2-6",
-    trainings: [
-      {
-        dayDe: "Mittwoch",
-        dayEn: "Wednesday",
-        time: "16:00–17:00",
-        location: "Fürth",
-      },
-    ],
-    trainers: [
-      {
-        name: TrainerName.TAMARA,
-      },
-      {
-        name: TrainerName.JULIANE,
-      },
-    ],
+    joinable: true,
+    training: {
+      dayDe: "Mittwoch",
+      dayEn: "Wednesday",
+      time: "16:00–17:00",
+      location: "Fürth",
+    },
+
+    trainers: [Trainers.TAMARA, Trainers.JULIANE],
     coverImage: "/images/gruppen/purzel/purzel-tanz.jpg",
     gallery: [
       "/images/gruppen/purzel/purzel-gruppe.jpg",
@@ -41,22 +34,14 @@ export const groups: Group[] = [
     descriptionEn:
       "Our youth group combines traditional guard dances with modern show elements...",
     age: "7-14",
-    trainings: [
-      {
-        dayDe: "Mittwoch",
-        dayEn: "Wednesday",
-        time: "17:00–18:00",
-        location: "Fürth",
-      },
-    ],
-    trainers: [
-      {
-        name: TrainerName.TAMARA,
-      },
-      {
-        name: TrainerName.JULIANE,
-      },
-    ],
+    joinable: true,
+    training: {
+      dayDe: "Mittwoch",
+      dayEn: "Wednesday",
+      time: "17:00–18:00",
+      location: "Fürth",
+    },
+    trainers: [Trainers.TAMARA, Trainers.JULIANE],
     coverImage: "/images/gruppen/jugend/jugendgarde-tanz.jpg",
     gallery: [
       "/images/gruppen/jugend/jugendgarde-tanz.jpg",
@@ -73,22 +58,14 @@ export const groups: Group[] = [
     descriptionEn:
       "Our adult group performs captivating show dances with energetic music, creating everything in collaboration with the entire group...",
     age: "16+",
-    trainings: [
-      {
-        dayDe: "Dienstag",
-        dayEn: "Tuesday",
-        time: "19:30–20:30",
-        location: "Zirndorf",
-      },
-    ],
-    trainers: [
-      {
-        name: "Gesamte Gruppe",
-      },
-      {
-        name: TrainerName.MINO,
-      },
-    ],
+    joinable: true,
+    training: {
+      dayDe: "Dienstag",
+      dayEn: "Tuesday",
+      time: "19:30–20:30",
+      location: "Zirndorf",
+    },
+    trainers: [{ name: "Gesamte Gruppe" }, Trainers.MINO],
     coverImage: "/images/gruppen/senioren/seniorengarde.jpg",
     gallery: ["/images/gruppen/senioren/seniorengarde.jpg"],
   },
@@ -101,22 +78,14 @@ export const groups: Group[] = [
     descriptionEn:
       "Our show duo captivates with synchronized dances and impressive stage presence and enchants through their dedication and joy...",
     age: "",
-    trainings: [
-      {
-        dayDe: "Kein fester Termin",
-        dayEn: "No fixed date",
-        time: "",
-        location: "Zirndorf",
-      },
-    ],
-    trainers: [
-      {
-        name: TrainerName.EVA,
-      },
-      {
-        name: TrainerName.MINO,
-      },
-    ],
+    joinable: false,
+    training: {
+      dayDe: "Kein fester Termin",
+      dayEn: "No fixed date",
+      time: "",
+      location: "Zirndorf",
+    },
+    trainers: [Trainers.EVA, Trainers.MINO],
     coverImage: "/images/gruppen/duo/duo-tanz.jpg",
     gallery: ["/images/gruppen/duo/duo-tanz.jpg"],
   },
@@ -129,19 +98,14 @@ export const groups: Group[] = [
     descriptionEn:
       "Our men group brings humor and entertainment to every event with their funny dances...",
     age: "16+",
-    trainings: [
-      {
-        dayDe: "TBD",
-        dayEn: "TBD",
-        time: "TBD",
-        location: "Zirndorf",
-      },
-    ],
-    trainers: [
-      {
-        name: TrainerName.EVA,
-      },
-    ],
+    joinable: true,
+    training: {
+      dayDe: "TBD",
+      dayEn: "TBD",
+      time: "TBD",
+      location: "Zirndorf",
+    },
+    trainers: [Trainers.EVA],
     coverImage: "/images/gruppen/maenner/seniorengarde.jpg",
     gallery: ["/images/gruppen/senioren/seniorengarde.jpg"],
   },
@@ -154,19 +118,14 @@ export const groups: Group[] = [
     descriptionEn:
       "Our youngest dance Mariechen captivates with her joy of dancing and charisma...",
     age: "5",
-    trainings: [
-      {
-        dayDe: "Dienstag",
-        dayEn: "Tuesday",
-        time: "16:00–17:00",
-        location: "Zirndorf",
-      },
-    ],
-    trainers: [
-      {
-        name: TrainerName.EVA,
-      },
-    ],
+    joinable: false,
+    training: {
+      dayDe: "Dienstag",
+      dayEn: "Tuesday",
+      time: "16:00–17:00",
+      location: "Zirndorf",
+    },
+    trainers: [Trainers.EVA],
     coverImage: "/images/gruppen/tanzmariechen/kindermariechen-isabella2.jpg",
     gallery: [
       "/images/gruppen/tanzmariechen/kindermariechen-isabella.jpg",
@@ -183,25 +142,14 @@ export const groups: Group[] = [
     descriptionEn:
       "Our youth dance Mariechen has only been with us for a short time, but already shows her great enthusiasm for dancing and what she can achieve in such a short time...",
     age: "",
-    trainings: [
-      {
-        dayDe: "Mittwoch",
-        dayEn: "Wednesday",
-        time: "18:00–19:00",
-        location: "Fürth",
-      },
-    ],
-    trainers: [
-      {
-        name: TrainerName.EVA,
-      },
-      {
-        name: TrainerName.TAMARA,
-      },
-      {
-        name: TrainerName.JULIANE,
-      },
-    ],
+    joinable: false,
+    training: {
+      dayDe: "Mittwoch",
+      dayEn: "Wednesday",
+      time: "18:00–19:00",
+      location: "Fürth",
+    },
+    trainers: [Trainers.EVA, Trainers.TAMARA, Trainers.JULIANE],
     coverImage: "/images/gruppen/tanzmariechen/jugendmariechen-isabella.jpg",
     gallery: [
       "/images/gruppen/tanzmariechen/jugendmariechen-isabella.jpg",
@@ -217,19 +165,14 @@ export const groups: Group[] = [
     descriptionEn:
       "Our oldest classical dance Mariechen has been showcasing her dance skills with elegance and precision for many years, captivating with her joy of dancing...",
     age: "17",
-    trainings: [
-      {
-        dayDe: "Dienstag",
-        dayEn: "Tuesday",
-        time: "18:00–19:30",
-        location: "Zirndorf",
-      },
-    ],
-    trainers: [
-      {
-        name: TrainerName.EVA,
-      },
-    ],
+    joinable: false,
+    training: {
+      dayDe: "Dienstag",
+      dayEn: "Tuesday",
+      time: "18:00–19:30",
+      location: "Zirndorf",
+    },
+    trainers: [Trainers.EVA],
     coverImage: "/images/gruppen/tanzmariechen/tanzmariechen-juliane.jpg",
     gallery: ["/images/gruppen/tanzmariechen/tanzmariechen-juliane.jpg"],
   },
@@ -242,22 +185,14 @@ export const groups: Group[] = [
     descriptionEn:
       "Our oldest classical dance Mariechen has been showcasing her dance skills with elegance and precision for many years, captivating with her joy of dancing. In her final season 2025/26, she will show what she can do one last time and finish the dances as a show dance Mariechen with a bang...",
     age: "",
-    trainings: [
-      {
-        dayDe: "Kein fester Termin",
-        dayEn: "No fixed date",
-        time: "",
-        location: "Zirndorf",
-      },
-    ],
-    trainers: [
-      {
-        name: TrainerName.EVA,
-      },
-      {
-        name: TrainerName.MINO,
-      },
-    ],
+    joinable: false,
+    training: {
+      dayDe: "Kein fester Termin",
+      dayEn: "No fixed date",
+      time: "",
+      location: "Zirndorf",
+    },
+    trainers: [Trainers.EVA, Trainers.MINO],
     coverImage: "/images/gruppen/tanzmariechen/showmariechen-tamara.jpg",
     gallery: ["/images/gruppen/tanzmariechen/showmariechen-tamara.jpg"],
   },
