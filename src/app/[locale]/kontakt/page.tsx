@@ -2,9 +2,9 @@ import type { Metadata } from "next";
 import { getTranslations } from "next-intl/server";
 
 export const metadata: Metadata = {
-  title: "Kontakt | Faschingsverein Example e.V. Musterstadt",
+  title: "Kontakt | Faschingsverein Treue Husaren Fürth e.V.",
   description:
-    "Kontaktiere den Faschingsverein Example e.V. in Musterstadt: E-Mail, Anschrift, Vereinsheim.",
+    "Kontaktiere den Faschingsverein Treue Husaren Fürth e.V.: E-Mail, Anschrift, Vereinsheim.",
 };
 
 export default async function KontaktPage() {

@@ -52,7 +52,7 @@ export default async function HomePage({ params }: Props) {
 
   return (
     <>
-      <OrganizationJsonLd />
+      <!-- TODO: Remove comment when data is correct <OrganizationJsonLd /> -->
       <div className="space-y-10">
         {/* Hero */}
         <section className="space-y-4">
@@ -125,7 +125,7 @@ export default async function HomePage({ params }: Props) {
             {t("ctaTitle")}
           </h2>
           <p className="text-sm sm:text-base mb-4 max-w-2xl">{t("ctaText")}</p>
-          <Button href={`/${locale}/kontakt`} variant="primary">
+          <Button href={`/${locale}/kontakt`} variant="outline">
             {t("ctaButton")}
           </Button>
         </section>

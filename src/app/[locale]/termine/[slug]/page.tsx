@@ -105,7 +105,7 @@ export default async function EventDetailPage({ params }: Props) {
 
   return (
     <>
-      <EventJsonLd event={event!} locale={locale} />
+      <!-- TODO: Remove comment when data is correct <EventJsonLd event={event!} locale={locale} /> -->
 
       <article className="space-y-6">
         {/* Header */}

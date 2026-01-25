@@ -92,33 +92,19 @@ export default async function VereinPage({ params }: Props) {
         </p>
 
         <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-          <Card>
-            <div className="text-sm font-semibold mb-1">
-              {t("boardMember1Name")}
-            </div>
-            <div className="text-xs text-brand-muted mb-2">
-              {t("boardMember1Role")}
-            </div>
-            <p className="text-xs text-brand-muted">{t("boardMember1Desc")}</p>
-          </Card>
-          <Card>
-            <div className="text-sm font-semibold mb-1">
-              {t("boardMember2Name")}
-            </div>
-            <div className="text-xs text-brand-muted mb-2">
-              {t("boardMember2Role")}
-            </div>
-            <p className="text-xs text-brand-muted">{t("boardMember2Desc")}</p>
-          </Card>
-          <Card>
-            <div className="text-sm font-semibold mb-1">
-              {t("boardMember3Name")}
-            </div>
-            <div className="text-xs text-brand-muted mb-2">
-              {t("boardMember3Role")}
-            </div>
-            <p className="text-xs text-brand-muted">{t("boardMember3Desc")}</p>
-          </Card>
+          {[...Array(8)].map((_, i) => (
+            <Card key={i}>
+              <div className="text-sm font-semibold mb-1">
+                {t(`boardMember${i + 1}Name`)}
+              </div>
+              <div className="text-xs text-brand-muted mb-2">
+                {t(`boardMember${i + 1}Role`)}
+              </div>
+              <p className="text-xs text-brand-muted">
+                {t(`boardMember${i + 1}Desc`)}
+              </p>
+            </Card>
+          ))}
         </div>
       </section>
 

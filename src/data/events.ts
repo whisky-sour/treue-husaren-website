@@ -18,12 +18,12 @@ export const events: Event[] = [
     titleDe: "Große Prunksitzung 2026",
     titleEn: "Grand Gala Session 2026",
     descriptionDe:
-      "Unsere große Prunksitzung mit Tanzgarden, Büttenreden und Musik in Musterstadt.",
+      "Unsere große Prunksitzung mit Tanzgarden, Büttenreden und Musik in Obermichelbach.",
     descriptionEn:
-      "Our grand gala session with dance groups, speeches and live music in Musterstadt.",
-    startDate: "2026-01-31T19:11:00+01:00",
-    endDate: "2026-01-31T23:59:00+01:00",
-    locationName: "Stadthalle Musterstadt",
+      "Our grand gala session with dance groups, speeches and live music in Obermichelbach.",
+    startDate: "2026-01-24T19:11:00+01:00",
+    endDate: "2026-01-24T23:59:00+01:00",
+    locationName: "Bürgerhalle Obermichelbach",
     streetAddress: "Hallenweg 1",
     postalCode: "12345",
     addressLocality: "Musterstadt",
