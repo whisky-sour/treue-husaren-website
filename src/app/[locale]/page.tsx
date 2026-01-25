@@ -52,7 +52,7 @@ export default async function HomePage({ params }: Props) {
 
   return (
     <>
-      <!-- TODO: Remove comment when data is correct <OrganizationJsonLd /> -->
+      {/* TODO: Remove comment when data is correct <OrganizationJsonLd /> */}
       <div className="space-y-10">
         {/* Hero */}
         <section className="space-y-4">
