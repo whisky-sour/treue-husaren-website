@@ -66,14 +66,6 @@ export default async function VereinPage({ params }: Props) {
           </Card>
 
           <Card className="relative overflow-hidden transition-transform hover:-translate-y-0.5 hover:shadow-lg">
-            <div className="absolute inset-x-0 top-0 h-1 bg-brand-green/60" />
-            <h3 className="text-base sm:text-lg font-semibold mb-1">
-              {t("groupElferrat")}
-            </h3>
-            <p className="text-sm text-brand-muted">{t("groupElferratDesc")}</p>
-          </Card>
-
-          <Card className="relative overflow-hidden transition-transform hover:-translate-y-0.5 hover:shadow-lg">
             <div className="absolute inset-x-0 top-0 h-1 bg-brand-red/60" />
 
             <h3 className="text-base sm:text-lg font-semibold mb-1">

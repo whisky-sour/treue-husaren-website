@@ -1,16 +1,4 @@
-export type Event = {
-  slug: string;
-  titleDe: string;
-  titleEn: string;
-  descriptionDe: string;
-  descriptionEn: string;
-  startDate: string; // ISO 8601
-  endDate?: string;
-  locationName: string;
-  streetAddress: string;
-  postalCode: string;
-  addressLocality: string;
-};
+import { Event } from "@/domain/event.types";
 
 export const events: Event[] = [
   {
@@ -27,6 +15,7 @@ export const events: Event[] = [
     streetAddress: "Hallenweg 1",
     postalCode: "12345",
     addressLocality: "Musterstadt",
+    calendarSlugs: ["alle"],
   },
   {
     slug: "kinderfasching-2026",
