@@ -7,6 +7,7 @@ import { Button } from "@/app/components/ui/Button";
 import CtaJoinSection from "@/app/components/ui/CtaJoinSection";
 import { getTranslations } from "next-intl/server";
 import Image from "next/image";
+import { Badge } from "@/app/components/ui/Badge";
 
 type Params = { locale: string; slug: string };
 type Props = { params: Promise<Params> };
@@ -63,12 +64,12 @@ function EventJsonLd({
     inLanguage: isDe ? "de" : "en",
     location: {
       "@type": "Place",
-      name: event.locationName,
+      name: event.location.locationName,
       address: {
         "@type": "PostalAddress",
-        streetAddress: event.streetAddress,
-        postalCode: event.postalCode,
-        addressLocality: event.addressLocality,
+        streetAddress: event.location.streetAddress,
+        postalCode: event.location.postalCode,
+        addressLocality: event.location.addressLocality,
         addressCountry: "DE",
       },
     },
@@ -119,9 +120,15 @@ export default async function EventDetailPage({ params }: Props) {
           <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold tracking-tight">
             {title}
           </h1>
-          <p className="text-xs sm:text-sm text-brand-muted">
-            {date} · {event!.locationName}, {event!.addressLocality}
-          </p>
+          <span className="text-xs sm:text-sm text-brand-muted">
+            {date} · {event.location.locationName},{" "}
+            {event.location.addressLocality}
+          </span>
+          {isDone && (
+            <span className="inline-flex items-center rounded-full bg-gray-100 px-2.5 py-0.5 text-[11px] font-semibold text-gray-700">
+              <Badge>{t("past")}</Badge> {/* z.B. "Vergangen" */}
+            </span>
+          )}
         </header>
 
         {/* Inhalt in zwei Spalten ab lg */}
@@ -141,11 +148,11 @@ export default async function EventDetailPage({ params }: Props) {
                 {t("location")}
               </h3>
               <p className="text-xs sm:text-sm text-brand-muted">
-                {event!.locationName}
+                {event.location.locationName}
                 <br />
-                {event!.streetAddress}
+                {event.location.streetAddress}
                 <br />
-                {event!.postalCode} {event!.addressLocality}
+                {event.location.postalCode} {event.location.addressLocality}
               </p>
             </Card>
           </div>

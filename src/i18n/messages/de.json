@@ -77,6 +77,7 @@
   "EventDetail": {
     "eventLabel": "Veranstaltung",
     "aboutEvent": "Über die Veranstaltung",
+    "past": "Vergangen",
     "location": "Ort",
     "gallery": "Galerie",
     "questionsTitle": "Fragen zur Veranstaltung?",

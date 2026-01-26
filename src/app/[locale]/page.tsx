@@ -111,7 +111,8 @@ export default async function HomePage({ params }: Props) {
                         {date}
                       </p>
                       <p className="text-xs sm:text-sm text-brand-muted mb-3">
-                        {event.locationName}, {event.addressLocality}
+                        {event.location.locationName},{" "}
+                        {event.location.addressLocality}
                       </p>
                       <a
                         href={`/${locale}/termine/${event.slug}`}
@@ -149,7 +150,7 @@ export default async function HomePage({ params }: Props) {
                       {date}
                     </p>
                     <p className="text-xs sm:text-sm text-brand-muted mb-3">
-                      {e.locationName}, {e.addressLocality}
+                      {e.location.locationName}, {e.location.addressLocality}
                     </p>
                     <a
                       href={`/${locale}/termine/${e.slug}`}
@@ -158,7 +159,7 @@ export default async function HomePage({ params }: Props) {
                       {t("moreInfo")}
                     </a>
                     {e.images && (
-                      <div className="grid grid-cols-1 md:grid-cols-2 gap-2 mb-2">
+                      <div className="grid grid-cols-1 md:grid-cols-2 gap-2 pt-3">
                         {e.images
                           .slice(0, Math.min(e.images.length, 4))
                           .map((img, idx) => (

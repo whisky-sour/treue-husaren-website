@@ -1,4 +1,23 @@
-import { Group, Trainers } from "@/domain/group.types";
+import { Group, Trainer } from "@/domain/group.types";
+
+export const trainers: Record<string, Trainer> = {
+  EVA: {
+    name: "Eva Michalczyk",
+    image: "/images/gruppen/trainer/trainer-eva.jpg",
+  },
+  TAMARA: {
+    name: "Tamara Eckstein",
+    image: "/images/gruppen/trainer/trainer-tamara.jpg",
+  },
+  JULIANE: {
+    name: "Juliane Müller",
+    image: "/images/gruppen/trainer/trainer-juliane.jpg",
+  },
+  MINO: {
+    name: "Mino Michalczyk",
+    image: "/images/gruppen/trainer/trainer-mino.jpg",
+  },
+};
 
 export const groups: Group[] = [
   {
@@ -18,7 +37,7 @@ export const groups: Group[] = [
       location: "Fürth",
     },
 
-    trainers: [Trainers.TAMARA, Trainers.JULIANE],
+    trainers: [trainers.TAMARA, trainers.JULIANE],
     coverImage: "/images/gruppen/purzel/purzel-tanz.jpg",
     gallery: [
       "/images/gruppen/purzel/purzel-gruppe.jpg",
@@ -41,7 +60,7 @@ export const groups: Group[] = [
       time: "17:00–18:00",
       location: "Fürth",
     },
-    trainers: [Trainers.TAMARA, Trainers.JULIANE],
+    trainers: [trainers.TAMARA, trainers.JULIANE],
     coverImage: "/images/gruppen/jugend/jugendgarde-tanz.jpg",
     gallery: [
       "/images/gruppen/jugend/jugendgarde-tanz.jpg",
@@ -65,7 +84,7 @@ export const groups: Group[] = [
       time: "19:30–20:30",
       location: "Zirndorf",
     },
-    trainers: [{ name: "Gesamte Gruppe" }, Trainers.MINO],
+    trainers: [{ name: "Gesamte Gruppe" }, trainers.MINO],
     coverImage: "/images/gruppen/senioren/seniorengarde.jpg",
     gallery: ["/images/gruppen/senioren/seniorengarde.jpg"],
   },
@@ -85,7 +104,7 @@ export const groups: Group[] = [
       time: "",
       location: "Zirndorf",
     },
-    trainers: [Trainers.EVA, Trainers.MINO],
+    trainers: [trainers.EVA, trainers.MINO],
     coverImage: "/images/gruppen/duo/duo-tanz.jpg",
     gallery: ["/images/gruppen/duo/duo-tanz.jpg"],
   },
@@ -105,7 +124,7 @@ export const groups: Group[] = [
       time: "TBD",
       location: "Zirndorf",
     },
-    trainers: [Trainers.EVA],
+    trainers: [trainers.EVA],
     coverImage: "/images/gruppen/maenner/seniorengarde.jpg",
     gallery: ["/images/gruppen/senioren/seniorengarde.jpg"],
   },
@@ -125,7 +144,7 @@ export const groups: Group[] = [
       time: "16:00–17:00",
       location: "Zirndorf",
     },
-    trainers: [Trainers.EVA],
+    trainers: [trainers.EVA],
     coverImage:
       "/images/gruppen/tanzmariechen/kindermariechen-isabella-cover.jpg",
     gallery: [
@@ -150,7 +169,7 @@ export const groups: Group[] = [
       time: "18:00–19:00",
       location: "Fürth",
     },
-    trainers: [Trainers.EVA, Trainers.TAMARA, Trainers.JULIANE],
+    trainers: [trainers.EVA, trainers.TAMARA, trainers.JULIANE],
     coverImage: "/images/gruppen/tanzmariechen/jugendmariechen-isabella.jpg",
     gallery: [
       "/images/gruppen/tanzmariechen/jugendmariechen-isabella.jpg",
@@ -173,7 +192,7 @@ export const groups: Group[] = [
       time: "18:00–19:30",
       location: "Zirndorf",
     },
-    trainers: [Trainers.EVA],
+    trainers: [trainers.EVA],
     coverImage: "/images/gruppen/tanzmariechen/tanzmariechen-juliane-cover.jpg",
     gallery: [
       "/images/gruppen/tanzmariechen/tanzmariechen-juliane.jpg",
@@ -196,7 +215,7 @@ export const groups: Group[] = [
       time: "",
       location: "Zirndorf",
     },
-    trainers: [Trainers.EVA, Trainers.MINO],
+    trainers: [trainers.EVA, trainers.MINO],
     coverImage: "/images/gruppen/tanzmariechen/showmariechen-tamara.jpg",
     gallery: ["/images/gruppen/tanzmariechen/showmariechen-tamara.jpg"],
   },

@@ -26,22 +26,3 @@ export type Group = {
 };
 
 export type Trainer = { name: string; image?: string };
-
-export const Trainers: Record<string, Trainer> = {
-  EVA: {
-    name: "Eva Michalczyk",
-    image: "/images/gruppen/trainer/trainer-eva.jpg",
-  },
-  TAMARA: {
-    name: "Tamara Eckstein",
-    image: "/images/gruppen/trainer/trainer-tamara.jpg",
-  },
-  JULIANE: {
-    name: "Juliane Müller",
-    image: "/images/gruppen/trainer/trainer-juliane.jpg",
-  },
-  MINO: {
-    name: "Mino Michalczyk",
-    image: "/images/gruppen/trainer/trainer-mino.jpg",
-  },
-};

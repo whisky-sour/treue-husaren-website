@@ -60,6 +60,7 @@
   "EventDetail": {
     "eventLabel": "Event",
     "aboutEvent": "About this event",
+    "past": "In the past",
     "location": "Location",
     "gallery": "Gallery",
     "questionsTitle": "Questions about this event?",

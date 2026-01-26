@@ -1,4 +1,31 @@
-import { Event } from "@/domain/event.types";
+import { Event, Location } from "@/domain/event.types";
+
+const locations: Record<string, Location> = {
+  SCHUETZEN_WEIHERHOF: {
+    locationName: "Schützenhaus der Bürgerschützen Weiherhof",
+    streetAddress: "Schwanenweg 3",
+    postalCode: "90513",
+    addressLocality: "Zirndorf",
+  },
+  BUERGERHALLE_OBERMICHELBACH: {
+    locationName: "Bürgerhalle Obermichelbach",
+    streetAddress: "Vacher Str. 25",
+    postalCode: "90587",
+    addressLocality: "Obermichelbach",
+  },
+  AWO_VEREINSHEIM: {
+    locationName: "AWO Vereinsheim Fürth",
+    streetAddress: "Feldstraße 7",
+    postalCode: "90766",
+    addressLocality: "Fürth",
+  },
+  FLAIR_FUERTH: {
+    locationName: "FLAIR Fürth",
+    streetAddress: "Schwabacher Straße 5",
+    postalCode: "90762",
+    addressLocality: "Fürth",
+  },
+};
 
 export const events: Event[] = [
   {
@@ -11,10 +38,7 @@ export const events: Event[] = [
       "Our grand gala session with dance groups, speeches and live music in Obermichelbach.",
     startDate: "2026-01-24T19:11:00+01:00",
     endDate: "2026-01-24T23:59:00+01:00",
-    locationName: "Bürgerhalle Obermichelbach",
-    streetAddress: "Hallenweg 1",
-    postalCode: "12345",
-    addressLocality: "Musterstadt",
+    location: locations.BUERGERHALLE_OBERMICHELBACH,
     images: [
       "/images/events/prunksitzung-2026/prunksitzung-2026-prinzessin.jpg",
       "/images/events/prunksitzung-2026/prunksitzung-2026-purzel.jpg",
@@ -36,12 +60,9 @@ export const events: Event[] = [
       "Bunter Kinderfasching mit Spielen, Musik und Kostümprämierung.",
     descriptionEn:
       "Colourful kids carnival with games, music and a costume contest.",
-    startDate: "2026-02-16T14:11:00+01:00",
-    endDate: "2026-02-16T17:00:00+01:00",
-    locationName: "Vereinsheim Musterstadt",
-    streetAddress: "Vereinsstraße 11",
-    postalCode: "12345",
-    addressLocality: "Musterstadt",
+    startDate: "2026-01-31T14:11:00+01:00",
+    endDate: "2026-01-31T17:00:00+01:00",
+    location: locations.SCHUETZEN_WEIHERHOF,
   },
   {
     slug: "wolpertinger-2026",
@@ -50,12 +71,9 @@ export const events: Event[] = [
     descriptionDe:
       "Traditionelles Wolpertinger Essen mit regionalen Spezialitäten.",
     descriptionEn: "Traditional Wolpertinger feast with regional specialties.",
-    startDate: "2026-03-01T18:00:00+01:00",
-    endDate: "2026-03-01T22:00:00+01:00",
-    locationName: "Gasthof Zum Wolpertinger",
-    streetAddress: "Wolpertingerweg 5",
-    postalCode: "12345",
-    addressLocality: "Musterstadt",
+    startDate: "2026-02-13T19:11:00+01:00",
+    endDate: "2026-02-13T22:00:00+01:00",
+    location: locations.SCHUETZEN_WEIHERHOF,
   },
   {
     slug: "fischessen-2026",
@@ -64,12 +82,9 @@ export const events: Event[] = [
     descriptionDe: "Fischessen.",
     descriptionEn:
       "Our grand gala session with dance groups, speeches and live music in Musterstadt.",
-    startDate: "2026-01-31T19:11:00+01:00",
-    endDate: "2026-01-31T23:59:00+01:00",
-    locationName: "Stadthalle Musterstadt",
-    streetAddress: "Hallenweg 1",
-    postalCode: "12345",
-    addressLocality: "Musterstadt",
+    startDate: "2026-02-28T19:11:00+01:00",
+    endDate: "2026-02-28T23:59:00+01:00",
+    location: locations.SCHUETZEN_WEIHERHOF,
   },
   {
     slug: "weihnachtsfeier-2025",
@@ -81,9 +96,18 @@ export const events: Event[] = [
       "Our grand gala session with dance groups, speeches and live music in Musterstadt.",
     startDate: "2025-12-14T18:00:00+01:00",
     endDate: "2025-12-14T21:00:00+01:00",
-    locationName: "Bürgerschützen Weiherhof",
-    streetAddress: "Wegweg 123",
-    postalCode: "12345",
-    addressLocality: "Musterstadt",
+    location: locations.SCHUETZEN_WEIHERHOF,
+  },
+  {
+    slug: "tollitaetentreffen-2026",
+    titleDe: "Tollitätentreffen 2026",
+    titleEn: "Royalty Meeting 2026",
+    descriptionDe:
+      "Treffen der Karnevalstollitäten aus der Region mit Programm und Tanz im Einkaufszentrum FLAIR in Fürth.",
+    descriptionEn:
+      "Meeting of carnival royalties from the region with program and dance at the FLAIR shopping center in Fürth.",
+    startDate: "2026-02-07T10:30:00+01:00",
+    endDate: "2026-02-07T16:00:00+01:00",
+    location: locations.FLAIR_FUERTH,
   },
 ];
