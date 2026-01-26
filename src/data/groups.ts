@@ -125,8 +125,8 @@ export const groups: Group[] = [
       location: "Zirndorf",
     },
     trainers: [trainers.EVA],
-    coverImage: "/images/gruppen/maenner/seniorengarde.jpg",
-    gallery: ["/images/gruppen/senioren/seniorengarde.jpg"],
+    coverImage: "/images/gruppen/maenner/maennerballet-piraten.jpeg",
+    gallery: ["/images/gruppen/maenner/maennerballet-piraten.jpeg"],
   },
   {
     slug: "tanzmariechen-isabella",
