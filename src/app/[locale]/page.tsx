@@ -5,6 +5,7 @@ import { events } from "@/data/events";
 import { Card } from "@/app/components/ui/Card";
 import { Button } from "@/app/components/ui/Button";
 import { Badge } from "@/app/components/ui/Badge";
+import CtaJoinSection from "@/app/components/ui/CtaJoinSection";
 
 type Params = { locale: Locale };
 type Props = { params: Promise<Params> };
@@ -117,18 +118,12 @@ export default async function HomePage({ params }: Props) {
         </section>
 
         {/* CTA Mitglied werden */}
-        <section
-          className="rounded-2xl border border-gray-200 bg-gradient-to-r from-brand-red via-red-700 to-brand-red
- px-4 py-6 sm:px-6 sm:py-7 text-white shadow-md"
-        >
-          <h2 className="text-xl sm:text-2xl font-semibold mb-2">
-            {t("ctaTitle")}
-          </h2>
-          <p className="text-sm sm:text-base mb-4 max-w-2xl">{t("ctaText")}</p>
-          <Button href={`/${locale}/kontakt`} variant="outline">
-            {t("ctaButton")}
-          </Button>
-        </section>
+        <CtaJoinSection
+          ctaTitle={t("ctaTitle")}
+          ctaText={t("ctaText")}
+          ctaButton={t("ctaButton")}
+          href={`/${locale}/kontakt`}
+        />
       </div>
     </>
   );

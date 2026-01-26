@@ -66,7 +66,7 @@ export default async function LocaleLayout({ children, params }: LayoutProps) {
 
               <Navigation />
             </div>
-            <div className="h-1 bg-brand-green" />
+            <div className="h-1 bg-brand-red" />
           </header>
 
           <main className="flex-1 max-w-5xl mx-auto px-4 py-6 sm:py-8">

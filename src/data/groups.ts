@@ -126,11 +126,12 @@ export const groups: Group[] = [
       location: "Zirndorf",
     },
     trainers: [Trainers.EVA],
-    coverImage: "/images/gruppen/tanzmariechen/kindermariechen-isabella2.jpg",
+    coverImage:
+      "/images/gruppen/tanzmariechen/kindermariechen-isabella-cover.jpg",
     gallery: [
       "/images/gruppen/tanzmariechen/kindermariechen-isabella.jpg",
       "/images/gruppen/tanzmariechen/kindermariechen-isabella2.jpg",
-      "/images/gruppen/tanzmariechen/kindermariechen-isabella-tanz.jpg",
+      "/images/gruppen/tanzmariechen/kindermariechen-isabella-cover.jpg",
     ],
   },
   {
@@ -173,8 +174,11 @@ export const groups: Group[] = [
       location: "Zirndorf",
     },
     trainers: [Trainers.EVA],
-    coverImage: "/images/gruppen/tanzmariechen/tanzmariechen-juliane.jpg",
-    gallery: ["/images/gruppen/tanzmariechen/tanzmariechen-juliane.jpg"],
+    coverImage: "/images/gruppen/tanzmariechen/tanzmariechen-juliane-cover.jpg",
+    gallery: [
+      "/images/gruppen/tanzmariechen/tanzmariechen-juliane.jpg",
+      "/images/gruppen/tanzmariechen/tanzmariechen-juliane-cover.jpg",
+    ],
   },
   {
     slug: "tanzmariechen-tamara",
