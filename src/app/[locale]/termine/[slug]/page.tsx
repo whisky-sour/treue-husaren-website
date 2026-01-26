@@ -4,7 +4,9 @@ import { events } from "@/data/events";
 import type { Locale } from "@/i18n/config";
 import { Card } from "@/app/components/ui/Card";
 import { Button } from "@/app/components/ui/Button";
+import CtaJoinSection from "@/app/components/ui/CtaJoinSection";
 import { getTranslations } from "next-intl/server";
+import Image from "next/image";
 
 type Params = { locale: string; slug: string };
 type Props = { params: Promise<Params> };
@@ -102,6 +104,7 @@ export default async function EventDetailPage({ params }: Props) {
     locale === "de" ? "de-DE" : "en-GB",
     { dateStyle: "full", timeStyle: "short" },
   );
+  const isDone = new Date(event.startDate).getTime() < new Date().getTime();
 
   return (
     <>
@@ -148,18 +151,33 @@ export default async function EventDetailPage({ params }: Props) {
           </div>
         </div>
 
-        {/* CTA */}
-        <section className="rounded-2xl border border-gray-200 bg-gradient-to-r from-brand-red via-red-700 to-brand-red px-4 py-5 sm:px-6 sm:py-6 text-white shadow-md">
-          <h2 className="text-base sm:text-lg font-semibold mb-2">
-            {t("questionsTitle")}
-          </h2>
-          <p className="text-xs sm:text-sm mb-3 max-w-xl">
-            {t("questionsText")}
-          </p>
-          <Button href={`/${locale}/kontakt`} variant="outline">
-            {t("contactButton")}
-          </Button>
-        </section>
+        {isDone && event.images && (
+          <Card className="space-y-3">
+            <h2 className="text-base sm:text-lg font-semibold">
+              {t("gallery")}
+            </h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-2 mb-2">
+              {event.images.map((img, idx) => (
+                <Image
+                  key={idx}
+                  src={img}
+                  alt={`${title} image ${idx + 1}`}
+                  width={300}
+                  height={180}
+                  className="rounded"
+                />
+              ))}
+            </div>
+          </Card>
+        )}
+        {!isDone && (
+          <CtaJoinSection
+            ctaTitle={t("questionsTitle")}
+            ctaText={t("questionsText")}
+            ctaButton={t("contactButton")}
+            href={`/${locale}/kontakt`}
+          />
+        )}
       </article>
     </>
   );
