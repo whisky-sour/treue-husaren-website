@@ -6,6 +6,7 @@ import { Card } from "@/app/components/ui/Card";
 import { Button } from "@/app/components/ui/Button";
 import { Badge } from "@/app/components/ui/Badge";
 import CtaJoinSection from "@/app/components/ui/CtaJoinSection";
+import Image from "next/image";
 
 type Params = { locale: Locale };
 type Props = { params: Promise<Params> };
@@ -45,11 +46,20 @@ export default async function HomePage({ params }: Props) {
   const isDe = locale === "de";
 
   const upcomingEvents = events
+    .filter((e) => new Date(e.startDate).getTime() > new Date().getTime())
     .sort(
       (a, b) =>
         new Date(a.startDate).getTime() - new Date(b.startDate).getTime(),
     )
     .slice(0, 2);
+
+  const lastEvent = events
+    .filter((e) => new Date(e.startDate).getTime() < new Date().getTime())
+    .sort(
+      (a, b) =>
+        new Date(b.startDate).getTime() - new Date(a.startDate).getTime(),
+    )
+    .slice(0, 1);
 
   return (
     <>
@@ -115,6 +125,57 @@ export default async function HomePage({ params }: Props) {
               })}
             </ul>
           )}
+          {lastEvent.map((e) => {
+            const title = isDe ? e.titleDe : e.titleEn;
+            const date = new Date(e.startDate).toLocaleString(
+              locale === "de" ? "de-DE" : "en-GB",
+              { dateStyle: "full", timeStyle: "short" },
+            );
+
+            return (
+              <>
+                <h2 className="text-xl sm:text-2xl font-semibold text-brand-text">
+                  {t("lastEventTitle")}
+                </h2>
+                <div key={e.slug}>
+                  <Card>
+                    <div className="flex items-start justify-between mb-2">
+                      <h3 className="text-base sm:text-lg font-semibold text-brand-text">
+                        {title}
+                      </h3>
+                      <Badge>{t("lastEventBadge")}</Badge>
+                    </div>
+                    <p className="text-xs sm:text-sm text-brand-muted mb-1">
+                      {date}
+                    </p>
+                    <p className="text-xs sm:text-sm text-brand-muted mb-3">
+                      {e.locationName}, {e.addressLocality}
+                    </p>
+                    {e.images && (
+                      <div className="grid grid-cols-1 md:grid-cols-2 gap-2 mb-2">
+                        {e.images.map((img, idx) => (
+                          <Image
+                            key={idx}
+                            src={img}
+                            alt={`${title} image ${idx + 1}`}
+                            width={300}
+                            height={180}
+                            className="rounded"
+                          />
+                        ))}
+                      </div>
+                    )}
+                    <a
+                      href={`/${locale}/termine/${e.slug}`}
+                      className="text-xs sm:text-sm font-semibold text-brand-red underline underline-offset-2 hover:text-brand-green"
+                    >
+                      {t("moreInfo")}
+                    </a>
+                  </Card>
+                </div>
+              </>
+            );
+          })}
         </section>
 
         {/* CTA Mitglied werden */}

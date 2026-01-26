@@ -10,5 +10,6 @@ export type Event = {
   streetAddress: string;
   postalCode: string;
   addressLocality: string;
+  images?: string[]; // e.g., ["/images/events/event1-pic1.jpg"]
   calendarSlugs?: string[]; // e.g., ["jugend", "senioren"]
 };

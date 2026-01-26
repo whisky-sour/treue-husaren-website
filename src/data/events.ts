@@ -15,6 +15,12 @@ export const events: Event[] = [
     streetAddress: "Hallenweg 1",
     postalCode: "12345",
     addressLocality: "Musterstadt",
+    images: [
+      "/images/events/prunksitzung-2026/prunksitzung-2026-prinzessin.jpg",
+      "/images/events/prunksitzung-2026/prunksitzung-2026-purzel.jpg",
+      "/images/events/prunksitzung-2026/prunksitzung-2026-showtanz.jpg",
+      "/images/events/prunksitzung-2026/prunksitzung-2026-ordensverleihung.jpg",
+    ],
     calendarSlugs: ["alle"],
   },
   {
