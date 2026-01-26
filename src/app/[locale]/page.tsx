@@ -151,26 +151,28 @@ export default async function HomePage({ params }: Props) {
                     <p className="text-xs sm:text-sm text-brand-muted mb-3">
                       {e.locationName}, {e.addressLocality}
                     </p>
-                    {e.images && (
-                      <div className="grid grid-cols-1 md:grid-cols-2 gap-2 mb-2">
-                        {e.images.map((img, idx) => (
-                          <Image
-                            key={idx}
-                            src={img}
-                            alt={`${title} image ${idx + 1}`}
-                            width={300}
-                            height={180}
-                            className="rounded"
-                          />
-                        ))}
-                      </div>
-                    )}
                     <a
                       href={`/${locale}/termine/${e.slug}`}
-                      className="text-xs sm:text-sm font-semibold text-brand-red underline underline-offset-2 hover:text-brand-green"
+                      className="m-2 text-xs sm:text-sm font-semibold text-brand-red underline underline-offset-2 hover:text-brand-green"
                     >
                       {t("moreInfo")}
                     </a>
+                    {e.images && (
+                      <div className="grid grid-cols-1 md:grid-cols-2 gap-2 mb-2">
+                        {e.images
+                          .slice(0, Math.min(e.images.length, 4))
+                          .map((img, idx) => (
+                            <Image
+                              key={idx}
+                              src={img}
+                              alt={`${title} image ${idx + 1}`}
+                              width={300}
+                              height={180}
+                              className="rounded"
+                            />
+                          ))}
+                      </div>
+                    )}
                   </Card>
                 </div>
               </>

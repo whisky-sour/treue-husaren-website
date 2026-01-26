@@ -156,7 +156,7 @@ export default async function EventDetailPage({ params }: Props) {
             <h2 className="text-base sm:text-lg font-semibold">
               {t("gallery")}
             </h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-2 mb-2">
+            <div className="columns-1 md:columns-2 mb-2">
               {event.images.map((img, idx) => (
                 <Image
                   key={idx}
@@ -164,7 +164,7 @@ export default async function EventDetailPage({ params }: Props) {
                   alt={`${title} image ${idx + 1}`}
                   width={300}
                   height={180}
-                  className="rounded"
+                  className="rounded mb-2"
                 />
               ))}
             </div>
