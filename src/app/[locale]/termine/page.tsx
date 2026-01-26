@@ -111,7 +111,8 @@ export default async function TerminePage({ params }: Props) {
                     {dateLine}
                   </p>
                   <p className="text-xs sm:text-sm text-brand-muted">
-                    {event.locationName}, {event.addressLocality}
+                    {event.location.locationName},{" "}
+                    {event.location.addressLocality}
                   </p>
 
                   <div className="pt-2">
