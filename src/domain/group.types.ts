@@ -26,3 +26,21 @@ export type Group = {
 };
 
 export type Trainer = { name: string; image?: string };
+
+export type VorstandMember = {
+  name: string;
+  roleKey: string; // key from VorstandRoleKey enum
+  descKey: string; // key for description i18n
+  image?: string;
+};
+
+export enum VorstandRoleKey {
+  ERSTER_VORSTAND = "ERSTER_VORSTAND",
+  ZWEITER_VORSTAND = "ZWEITER_VORSTAND",
+  ERSTER_SCHATZMEISTER = "ERSTER_SCHATZMEISTER",
+  ZWEITER_SCHATZMEISTER = "ZWEITER_SCHATZMEISTER",
+  ERSTER_SCHRIFTFUEHRER = "ERSTER_SCHRIFTFUEHRER",
+  ZWEITER_SCHRIFTFUEHRER = "ZWEITER_SCHRIFTFUEHRER",
+  ERSTER_VERANSTALTUNGSLEITER = "ERSTER_VERANSTALTUNGSLEITER",
+  ZWEITER_VERANSTALTUNGSLEITER = "ZWEITER_VERANSTALTUNGSLEITER",
+}

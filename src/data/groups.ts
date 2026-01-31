@@ -1,4 +1,9 @@
-import { Group, Trainer } from "@/domain/group.types";
+import {
+  Group,
+  Trainer,
+  VorstandMember,
+  VorstandRoleKey,
+} from "@/domain/group.types";
 
 export const trainers: Record<string, Trainer> = {
   EVA: {
@@ -16,6 +21,57 @@ export const trainers: Record<string, Trainer> = {
   MINO: {
     name: "Mino Michalczyk",
     image: "/images/gruppen/trainer/trainer-mino.jpg",
+  },
+};
+
+export const vorstand: Record<string, VorstandMember> = {
+  ERSTER_VORSTAND: {
+    name: "Heike Schreiber",
+    roleKey: VorstandRoleKey.ERSTER_VORSTAND,
+    descKey: VorstandRoleKey.ERSTER_VORSTAND + "_DESC",
+    image: "/images/verein/vorstand/heike-schreiber.jpg",
+  },
+  ZWEITER_VORSTAND: {
+    name: "Gabi Stadler",
+    roleKey: VorstandRoleKey.ZWEITER_VORSTAND,
+    descKey: VorstandRoleKey.ZWEITER_VORSTAND + "_DESC",
+    image: "/images/verein/vorstand/gabi-stadler.jpg",
+  },
+  ERSTER_SCHATZMEISTER: {
+    name: "Tanja Bronzi",
+    roleKey: VorstandRoleKey.ERSTER_SCHATZMEISTER,
+    descKey: VorstandRoleKey.ERSTER_SCHATZMEISTER + "_DESC",
+    image: "/images/verein/vorstand/tanja-bronzi.jpg",
+  },
+  ZWEITER_SCHATZMEISTER: {
+    name: "Mino Michalczyk",
+    roleKey: VorstandRoleKey.ZWEITER_SCHATZMEISTER,
+    descKey: VorstandRoleKey.ZWEITER_SCHATZMEISTER + "_DESC",
+    image: "/images/verein/vorstand/mino-michalczyk.jpg",
+  },
+  ERSTER_SCHRIFTFUEHRER: {
+    name: "Tessa Stadler",
+    roleKey: VorstandRoleKey.ERSTER_SCHRIFTFUEHRER,
+    descKey: VorstandRoleKey.ERSTER_SCHRIFTFUEHRER + "_DESC",
+    image: "/images/verein/vorstand/tessa-stadler.jpg",
+  },
+  ZWEITER_SCHRIFTFUEHRER: {
+    name: "Susanne Eckstein",
+    roleKey: VorstandRoleKey.ZWEITER_SCHRIFTFUEHRER,
+    descKey: VorstandRoleKey.ZWEITER_SCHRIFTFUEHRER + "_DESC",
+    image: "/images/verein/vorstand/susanne-eckstein.jpg",
+  },
+  ERSTER_VERANSTALTUNGSLEITER: {
+    name: "Martin Scheuerle",
+    roleKey: VorstandRoleKey.ERSTER_VERANSTALTUNGSLEITER,
+    descKey: VorstandRoleKey.ERSTER_VERANSTALTUNGSLEITER + "_DESC",
+    image: "/images/verein/vorstand/martin-scheuerle.jpg",
+  },
+  ZWEITER_VERANSTALTUNGSLEITER: {
+    name: "Eva Michalczyk",
+    roleKey: VorstandRoleKey.ZWEITER_VERANSTALTUNGSLEITER,
+    descKey: VorstandRoleKey.ZWEITER_VERANSTALTUNGSLEITER + "_DESC",
+    image: "/images/verein/vorstand/eva-michalczyk.jpg",
   },
 };
 
@@ -218,6 +274,26 @@ export const groups: Group[] = [
     trainers: [trainers.EVA, trainers.MINO],
     coverImage: "/images/gruppen/tanzmariechen/showmariechen-tamara.jpg",
     gallery: ["/images/gruppen/tanzmariechen/showmariechen-tamara.jpg"],
+  },
+  {
+    slug: "social-media",
+    titleDe: "Social Media Team",
+    titleEn: "Social Media Team",
+    descriptionDe:
+      "Unser Social Media Team sorgt dafür, dass unsere Vereinsaktivitäten und Veranstaltungen auf verschiedenen Plattformen präsent sind und eine breite Öffentlichkeit erreichen...",
+    descriptionEn:
+      "Our Social Media Team ensures that our club activities and events are present on various platforms and reach a wide audience...",
+    age: "",
+    joinable: false,
+    training: {
+      dayDe: "Kein fester Termin",
+      dayEn: "No fixed date",
+      time: "",
+      location: "Zirndorf",
+    },
+    trainers: [],
+    coverImage: "/images/gruppen/socialmedia/socialmedia-team.jpg",
+    gallery: ["/images/gruppen/socialmedia/socialmedia-team.jpg"],
   },
   // ...weitere Gruppen
 ];
