@@ -1,11 +1,11 @@
 import type { Metadata } from "next";
 import { getTranslations } from "next-intl/server";
 import { Locale } from "@/i18n/config";
-import { Button } from "@/app/components/ui/Button";
 import { Card } from "@/app/components/ui/Card";
 import { groups } from "@/data/groups";
 import { GroupCard } from "@/app/[locale]/verein/GroupCard";
 import CtaJoinSection from "@/app/components/ui/CtaJoinSection";
+import { GroupType } from "@/domain/group.types";
 
 type Params = { locale: string };
 type Props = { params: Promise<Params> };
@@ -22,15 +22,6 @@ export default async function VereinPage({ params }: Props) {
   const isDe = locale === "de";
 
   const t = await getTranslations("Verein");
-
-  // Gruppen-Definition als Array von Keys für Titel und Beschreibung
-  const groupsDummy = [
-    { groupTitle: "groupGuard", groupDesc: "groupGuardDesc" },
-    { groupTitle: "groupYouth", groupDesc: "groupYouthDesc" },
-    { groupTitle: "groupTech", groupDesc: "groupTechDesc" },
-    { groupTitle: "groupTrainer", groupDesc: "groupTrainerDesc" },
-    { groupTitle: "groupCaretaker", groupDesc: "groupCaretakerDesc" },
-  ];
 
   return (
     <div className="space-y-10">
@@ -60,10 +51,32 @@ export default async function VereinPage({ params }: Props) {
           {t("groupsDescription")}
         </p>
 
-        <div className="grid gap-4 sm:grid-cols-2">
-          {groups.map((group) => (
-            <GroupCard key={group.slug} group={group} locale={locale} />
-          ))}
+        <div className="space-y-6">
+          <div className="space-y-3">
+            <h3 className="text-base sm:text-lg font-semibold">
+              {isDe ? "Tanzgruppen" : "Dance groups"}
+            </h3>
+            <div className="grid gap-4 sm:grid-cols-2">
+              {groups
+                .filter((group) => group.type === GroupType.DANCING)
+                .map((group) => (
+                  <GroupCard key={group.slug} group={group} locale={locale} />
+                ))}
+            </div>
+          </div>
+
+          <div className="space-y-3">
+            <h3 className="text-base sm:text-lg font-semibold">
+              {isDe ? "Teams" : "Teams"}
+            </h3>
+            <div className="grid gap-4 sm:grid-cols-2">
+              {groups
+                .filter((group) => group.type === GroupType.TEAM)
+                .map((group) => (
+                  <GroupCard key={group.slug} group={group} locale={locale} />
+                ))}
+            </div>
+          </div>
         </div>
       </section>
 
