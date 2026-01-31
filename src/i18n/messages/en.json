@@ -47,7 +47,15 @@
     "boardMember3Desc": "Responsible for finances, fees and accounting.",
     "ctaTitle": "Join Treue Husaren",
     "ctaText": "You want to become part of Treue Husaren – as a dancer, in the tech team or organisation?",
-    "ctaButton": "Become a member"
+    "ctaButton": "Become a member",
+    "ERSTER_VORSTAND": "1. Chairperson",
+    "ZWEITER_VORSTAND": "2. Chairperson",
+    "ERSTER_SCHATZMEISTER": "1. Treasurer",
+    "ZWEITER_SCHATZMEISTER": "2. Treasurer",
+    "ERSTER_SCHRIFTFUEHRER": "1. Secretary",
+    "ZWEITER_SCHRIFTFUEHRER": "2. Secretary",
+    "ERSTER_VERANSTALTUNGSLEITER": "1. Event manager",
+    "ZWEITER_VERANSTALTUNGSLEITER": "2. Event manager"
   },
   "EventsPage": {
     "metaTitle": "Events | Carnival Club Example",

@@ -46,7 +46,7 @@
     "boardMember2Desc": "Bastelfee und Organisatorin von einigen Veranstaltungen.",
     "boardMember3Name": "Tanja Bronzi",
     "boardMember3Role": "Schatzmeisterin",
-    "boardMember3Desc": "Zuständig für Finanzen, Beiträge und Abrechnung. (Auch Betreuerin)",
+    "boardMember3Desc": "Beim Döneressen überredet den sie auch noch selber zahlen musste ... Zuständig für Finanzen, Beiträge und Abrechnung. (Auch Betreuerin)",
     "boardMember4Name": "Martin Scheuerle",
     "boardMember4Role": "Veranstaltungsleiter",
     "boardMember4Desc": "Leitet den Auf- und Abbau sowie die technische Umsetzung unserer Veranstaltungen.",
@@ -64,7 +64,15 @@
     "boardMember8Desc": "Kassierer für die Veranstaltungen und macht die Musik für die Tänze.",
     "ctaTitle": "Mach mit bei den Treuen Husaren",
     "ctaText": "Du möchtest Teil der Treuen Husaren werden – als Tänzerin, Tänzer, in der Technik oder Organisation?",
-    "ctaButton": "Mitglied werden"
+    "ctaButton": "Mitglied werden",
+    "ERSTER_VORSTAND": "1. Vorstand",
+    "ZWEITER_VORSTAND": "2. Vorstand",
+    "ERSTER_SCHATZMEISTER": "1. Schatzmeister",
+    "ZWEITER_SCHATZMEISTER": "2. Schatzmeister",
+    "ERSTER_SCHRIFTFUEHRER": "1. Schriftführer",
+    "ZWEITER_SCHRIFTFUEHRER": "2. Schriftführer",
+    "ERSTER_VERANSTALTUNGSLEITER": "1. Veranstaltungsleiter",
+    "ZWEITER_VERANSTALTUNGSLEITER": "2. Veranstaltungsleiter"
   },
   "EventsPage": {
     "metaTitle": "Termine & Veranstaltungen | Faschingsverein Example e.V.",

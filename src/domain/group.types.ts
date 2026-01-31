@@ -1,4 +1,9 @@
-export type Group = {
+export enum GroupType {
+  DANCING = "DANCING",
+  TEAM = "TEAM",
+}
+
+type BaseGroup = {
   slug: string;
 
   // i18n Texte (einfach & robust)
@@ -8,30 +13,44 @@ export type Group = {
   descriptionEn: string;
 
   // Inhalte
-  age: string;
   joinable: boolean;
-
-  training: {
-    dayDe: string;
-    dayEn: string;
-    time: string; // "17:30–19:00"
-    location: string;
-  };
-
-  trainers: Array<Trainer>;
 
   // Bilder
   coverImage: string; // /images/gruppen/garde/cover.jpg
   gallery: string[]; // array of /images/gruppen/garde/1.jpg...
 };
 
-export type Trainer = { name: string; image?: string };
+export type DancingGroup = BaseGroup & {
+  type: GroupType.DANCING;
+  age: string;
+  training: {
+    dayDe: string;
+    dayEn: string;
+    time: string; // "17:30–19:00"
+    location: string;
+  };
+  trainers: Array<Trainer>;
+};
 
-export type VorstandMember = {
+export type TeamGroup = BaseGroup & {
+  type: GroupType.TEAM;
+  members: Member[];
+  tasksDe: string[];
+  tasksEn: string[];
+};
+
+export type Group = DancingGroup | TeamGroup;
+
+export type Trainer = Member;
+
+export type Member = {
   name: string;
+  image?: string;
+};
+
+export type VorstandMember = Member & {
   roleKey: string; // key from VorstandRoleKey enum
   descKey: string; // key for description i18n
-  image?: string;
 };
 
 export enum VorstandRoleKey {

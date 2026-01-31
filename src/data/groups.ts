@@ -1,9 +1,30 @@
 import {
   Group,
+  GroupType,
+  Member,
   Trainer,
   VorstandMember,
   VorstandRoleKey,
 } from "@/domain/group.types";
+
+const members: Record<string, Member> = {
+  EVA: {
+    name: "Eva Michalczyk",
+    image: "/images/gruppen/trainer/trainer-eva.jpg",
+  },
+  TAMARA: {
+    name: "Tamara Eckstein",
+    image: "/images/gruppen/trainer/trainer-tamara.jpg",
+  },
+  JULIANE: {
+    name: "Juliane Müller",
+    image: "/images/gruppen/trainer/trainer-juliane.jpg",
+  },
+  MINO: {
+    name: "Mino Michalczyk",
+    image: "/images/gruppen/trainer/trainer-mino.jpg",
+  },
+};
 
 export const trainers: Record<string, Trainer> = {
   EVA: {
@@ -78,6 +99,7 @@ export const vorstand: Record<string, VorstandMember> = {
 export const groups: Group[] = [
   {
     slug: "purzel",
+    type: GroupType.DANCING,
     titleDe: "Purzel",
     titleEn: "Purzel",
     descriptionDe:
@@ -102,6 +124,7 @@ export const groups: Group[] = [
   },
   {
     slug: "jugend",
+    type: GroupType.DANCING,
     titleDe: "Jugend Garde und Showtanz",
     titleEn: "Youth Guard and Show Dance",
     descriptionDe:
@@ -126,6 +149,7 @@ export const groups: Group[] = [
   },
   {
     slug: "senioren",
+    type: GroupType.DANCING,
     titleDe: "Senioren Showtanz",
     titleEn: "Adult Show Dance",
     descriptionDe:
@@ -146,6 +170,7 @@ export const groups: Group[] = [
   },
   {
     slug: "duo",
+    type: GroupType.DANCING,
     titleDe: "Showduo Tamara & Juliane",
     titleEn: "Show Duo Tamara & Juliane",
     descriptionDe:
@@ -166,6 +191,7 @@ export const groups: Group[] = [
   },
   {
     slug: "maenner",
+    type: GroupType.DANCING,
     titleDe: "Männerballett",
     titleEn: "Men group",
     descriptionDe:
@@ -186,6 +212,7 @@ export const groups: Group[] = [
   },
   {
     slug: "tanzmariechen-isabella",
+    type: GroupType.DANCING,
     titleDe: "Tanzmariechen Isabella",
     titleEn: "Dance Mariechen Isabella",
     descriptionDe:
@@ -211,6 +238,7 @@ export const groups: Group[] = [
   },
   {
     slug: "tanzmariechen-bella",
+    type: GroupType.DANCING,
     titleDe: "Tanzmariechen Isabella",
     titleEn: "Dance Mariechen Isabella",
     descriptionDe:
@@ -234,6 +262,7 @@ export const groups: Group[] = [
   },
   {
     slug: "tanzmariechen-juliane",
+    type: GroupType.DANCING,
     titleDe: "Tanzmariechen Juliane",
     titleEn: "Dance Mariechen Juliane",
     descriptionDe:
@@ -257,6 +286,7 @@ export const groups: Group[] = [
   },
   {
     slug: "tanzmariechen-tamara",
+    type: GroupType.DANCING,
     titleDe: "Show Tanzmariechen Tamara",
     titleEn: "Show Dance Mariechen Tamara",
     descriptionDe:
@@ -277,21 +307,17 @@ export const groups: Group[] = [
   },
   {
     slug: "social-media",
+    type: GroupType.TEAM,
     titleDe: "Social Media Team",
     titleEn: "Social Media Team",
     descriptionDe:
       "Unser Social Media Team sorgt dafür, dass unsere Vereinsaktivitäten und Veranstaltungen auf verschiedenen Plattformen präsent sind und eine breite Öffentlichkeit erreichen...",
     descriptionEn:
       "Our Social Media Team ensures that our club activities and events are present on various platforms and reach a wide audience...",
-    age: "",
     joinable: false,
-    training: {
-      dayDe: "Kein fester Termin",
-      dayEn: "No fixed date",
-      time: "",
-      location: "Zirndorf",
-    },
-    trainers: [],
+    members: [members.TAMARA, members.JULIANE],
+    tasksDe: ["Content-Planung", "Foto- & Videoposting", "Event-Ankündigungen"],
+    tasksEn: ["Content planning", "Photo & video posts", "Event announcements"],
     coverImage: "/images/gruppen/socialmedia/socialmedia-team.jpg",
     gallery: ["/images/gruppen/socialmedia/socialmedia-team.jpg"],
   },
