@@ -72,7 +72,15 @@
     "ERSTER_SCHRIFTFUEHRER": "1. Schriftführer",
     "ZWEITER_SCHRIFTFUEHRER": "2. Schriftführer",
     "ERSTER_VERANSTALTUNGSLEITER": "1. Veranstaltungsleiter",
-    "ZWEITER_VERANSTALTUNGSLEITER": "2. Veranstaltungsleiter"
+    "ZWEITER_VERANSTALTUNGSLEITER": "2. Veranstaltungsleiter",
+    "ERSTER_VORSTAND_DESC": "Verantwortlich für Gesamtkoordination und Vereinsvertretung.",
+    "ZWEITER_VORSTAND_DESC": "Bastelfee und Organisatorin von einigen Veranstaltungen.",
+    "ERSTER_SCHATZMEISTER_DESC": "Zuständig für Finanzen, Beiträge und Abrechnung.",
+    "ZWEITER_SCHATZMEISTER_DESC": "Kassierer für die Veranstaltungen und macht die Musik für die Tänze.",
+    "ERSTER_SCHRIFTFUEHRER_DESC": "Schreibt die Einladungen unserer Veranstaltungen.",
+    "ZWEITER_SCHRIFTFUEHRER_DESC": "Schreibt Protokolle und unterstützt bei der Organisation.",
+    "ERSTER_VERANSTALTUNGSLEITER_DESC": "Leitet den Auf- und Abbau sowie die technische Umsetzung unserer Veranstaltungen.",
+    "ZWEITER_VERANSTALTUNGSLEITER_DESC": "Organisiert Veranstaltungen mit und ist Trainerin für klassisch und Show."
   },
   "EventsPage": {
     "metaTitle": "Termine & Veranstaltungen | Faschingsverein Example e.V.",

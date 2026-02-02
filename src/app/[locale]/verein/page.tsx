@@ -3,6 +3,7 @@ import { getTranslations } from "next-intl/server";
 import { Locale } from "@/i18n/config";
 import { Card } from "@/app/components/ui/Card";
 import { groups } from "@/data/groups";
+import { vorstand } from "@/data/groups";
 import { GroupCard } from "@/app/[locale]/verein/GroupCard";
 import CtaJoinSection from "@/app/components/ui/CtaJoinSection";
 import { GroupType } from "@/domain/group.types";
@@ -88,16 +89,14 @@ export default async function VereinPage({ params }: Props) {
         </p>
 
         <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-          {[...Array(8)].map((_, i) => (
-            <Card key={i}>
-              <div className="text-sm font-semibold mb-1">
-                {t(`boardMember${i + 1}Name`)}
-              </div>
+          {Object.values(vorstand).map((member) => (
+            <Card key={member.name}>
+              <div className="text-sm font-semibold mb-1">{member.name}</div>
               <div className="text-xs text-brand-muted mb-2">
-                {t(`boardMember${i + 1}Role`)}
+                {t(member.roleKey)}
               </div>
               <p className="text-xs text-brand-muted">
-                {t(`boardMember${i + 1}Desc`)}
+                {t(member.descKey)}
               </p>
             </Card>
           ))}

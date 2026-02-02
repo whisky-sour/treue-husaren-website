@@ -56,6 +56,15 @@
     "ZWEITER_SCHRIFTFUEHRER": "2. Secretary",
     "ERSTER_VERANSTALTUNGSLEITER": "1. Event manager",
     "ZWEITER_VERANSTALTUNGSLEITER": "2. Event manager"
+    ,
+    "ERSTER_VORSTAND_DESC": "Responsible for overall coordination and representation of the club.",
+    "ZWEITER_VORSTAND_DESC": "Creative organizer and helper for several events.",
+    "ERSTER_SCHATZMEISTER_DESC": "Responsible for finances, membership fees and accounting.",
+    "ZWEITER_SCHATZMEISTER_DESC": "Event cashier and in charge of music for the dances.",
+    "ERSTER_SCHRIFTFUEHRER_DESC": "Writes the invitations for our events.",
+    "ZWEITER_SCHRIFTFUEHRER_DESC": "Writes minutes and supports organisation.",
+    "ERSTER_VERANSTALTUNGSLEITER_DESC": "Leads setup, teardown and technical execution of events.",
+    "ZWEITER_VERANSTALTUNGSLEITER_DESC": "Co-organises events and coaches classic and show dance."
   },
   "EventsPage": {
     "metaTitle": "Events | Carnival Club Example",

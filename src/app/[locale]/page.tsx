@@ -134,11 +134,11 @@ export default async function HomePage({ params }: Props) {
             );
 
             return (
-              <>
+              <div key={e.slug}>
                 <h2 className="text-xl sm:text-2xl font-semibold text-brand-text">
                   {t("lastEventTitle")}
                 </h2>
-                <div key={e.slug}>
+                <div>
                   <Card>
                     <div className="flex items-start justify-between mb-2">
                       <h3 className="text-base sm:text-lg font-semibold text-brand-text">
@@ -176,7 +176,7 @@ export default async function HomePage({ params }: Props) {
                     )}
                   </Card>
                 </div>
-              </>
+              </div>
             );
           })}
         </section>
